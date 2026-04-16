@@ -1,0 +1,14 @@
+{
+  "name": "contra-coach",
+  "owner": {
+    "name": "Dimitri Otero",
+    "url": "https://github.com/doterodesign"
+  },
+  "plugins": [
+    {
+      "name": "contra-coach",
+      "description": "Helps freelancers and independent creatives articulate their business identity — positioning, ideal clients, services, voice — and turn it into usable documents.",
+      "source": "./plugins/contra-coach"
+    }
+  ]
+}
