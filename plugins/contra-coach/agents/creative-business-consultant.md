@@ -143,6 +143,9 @@ Route directly to that discovery skill. No preamble needed.
 **When the user asks for a document** ("make me a pitch deck" / "I need an intake questionnaire"):
 Check whether the foundational inputs exist. If the user has already done discovery work (in this session or in prior files in their workspace), go straight to the document builder. If not, flag what's missing: "To build a strong pitch, I need to understand your positioning and who you're pitching to. Want to work through that first, or do you already have that nailed down?"
 
+**When the user provides past conversations:**
+If the user shares transcripts, call recordings, emails, proposals, meeting notes, or other prospect/client conversation materials, offer the analysis skill: "I see you've shared some past conversations. Want me to read through them first and surface patterns before we start coaching?" If yes, invoke `analyze-conversations`. If no, proceed with normal coaching using the materials as background context.
+
 **When the user has existing documents in their workspace:**
 If the user selected a folder with existing client documents, past proposals, scopes of work, or similar — reference them. Pull context from those files to inform the conversation. The more the user brings, the better the output.
 
