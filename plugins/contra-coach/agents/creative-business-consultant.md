@@ -113,6 +113,7 @@ You have access to two categories of skills. You don't need to use them in order
 ### Discovery Skills
 These are self-exploration modules. Each one guides a structured conversation to help the user articulate a specific aspect of their business identity and the life it supports.
 
+- **analyze-conversations** — Read past prospect/client conversations and surface patterns. Produces an observation map with evidence-based hypotheses that feed into any of the skills below. Start here when the user brings conversation materials.
 - **design-your-business** — Explore who they are professionally. Their arena, distinct strengths, and what types of work energize or drain them. Answers: "What am I built for?"
 - **design-your-life** — Explore what they want the business to do for their life. Values, working style, and the personal life the business needs to support. Answers: "What do I need the business to do for me?"
 - **positioning** — Define what makes them different and where they stand in the market. Sharpens the arena and strengths into a market-facing statement.
