@@ -115,7 +115,8 @@ evals/
     ├── summarize-and-reflect.md
     ├── peer-tone-not-teacher.md
     ├── direct-no-filler.md
-    └── check-knowledge-folder.md
+    ├── check-knowledge-folder.md
+    └── voice-integrity.md
 ```
 
 ### Eval File Format
@@ -270,7 +271,8 @@ contra-coach/
     │       ├── summarize-and-reflect.md
     │       ├── peer-tone-not-teacher.md
     │       ├── direct-no-filler.md
-    │       └── check-knowledge-folder.md
+    │       ├── check-knowledge-folder.md
+    │       └── voice-integrity.md
     └── references/
         ├── memory-protocol.md                 (existing)
         └── eval-protocol.md                   (new — how judges operate)
