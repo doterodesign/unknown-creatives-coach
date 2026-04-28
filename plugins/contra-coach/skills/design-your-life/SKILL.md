@@ -130,19 +130,10 @@ Sometimes what the user wants from their life conflicts with their working style
 
 These tensions aren't problems — they're the most valuable things to surface. They're where the real design decisions live.
 
-## Producing the Output
+## Context
 
-## Knowledge and Memory
-
-### Before starting
-- Check `contra-coach-knowledge/` for existing files. If `business-identity.md` or other discovery outputs exist, reference them — don't make the user repeat themselves.
-- Read `contra-coach-knowledge/memory.md` if it exists. Use past corrections and preferences to shape the conversation.
-
-### During the conversation
-- Follow the memory protocol in `references/memory-protocol.md`. When the user corrects, rejects, or reveals a strong preference, append it to `contra-coach-knowledge/memory.md`.
-
-### After producing the output
-- Save the Life Design Summary to `contra-coach-knowledge/life-design.md` in the user's workspace. Ask the user before saving. If they want a different format or location, accommodate that.
+Builds on: `business-identity.md`
+Output: `life-design.md`
 
 ## Producing the Output
 

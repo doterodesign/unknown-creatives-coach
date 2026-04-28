@@ -17,18 +17,10 @@ Guide the user through defining their market positioning — a clear, specific a
 
 This skill takes the raw material from design-your-business (arena, strengths, energy map) and sharpens it into a market-facing position. If that upstream work exists, build on it. If not, do lighter discovery inline.
 
-## Knowledge and Memory
+## Context
 
-### Before starting
-- Check `contra-coach-knowledge/business-identity.md` — if it exists, read it and use the arena, strengths, and energy map as the foundation. Don't re-ask questions the user already answered.
-- Check `contra-coach-knowledge/life-design.md` — if it exists, note the design constraints (financial floor, scheduling, client preferences). These shape what kind of positioning is viable.
-- Read `contra-coach-knowledge/memory.md` if it exists. Use past corrections and preferences to shape language choices.
-
-### During the conversation
-- Follow the memory protocol in `references/memory-protocol.md`. Positioning conversations surface a lot of language preferences — capture them.
-
-### After producing the output
-- Save the Positioning Summary to `contra-coach-knowledge/positioning.md` in the user's workspace. Ask the user before saving.
+Builds on: `business-identity.md`, `life-design.md`
+Output: `positioning.md`
 
 ## Starting the Conversation
 

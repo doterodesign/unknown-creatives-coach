@@ -108,17 +108,10 @@ Use direct questions tied to specific activities:
 
 When you hear a pattern — say, they light up talking about early-stage exploration but deflate when execution comes up — name it explicitly. The user often can't see their own patterns until someone points them out.
 
-## Knowledge and Memory
+## Context
 
-### Before starting
-- Check `contra-coach-knowledge/` for existing files. If `life-design.md` or other discovery outputs exist, reference them — don't make the user repeat themselves.
-- Read `contra-coach-knowledge/memory.md` if it exists. Use past corrections and preferences to shape the conversation.
-
-### During the conversation
-- Follow the memory protocol in `references/memory-protocol.md`. When the user corrects, rejects, or reveals a strong preference, append it to `contra-coach-knowledge/memory.md`.
-
-### After producing the output
-- Save the Business Identity Summary to `contra-coach-knowledge/business-identity.md` in the user's workspace. Ask the user before saving. If they want a different format or location, accommodate that.
+Builds on: `life-design.md`
+Output: `business-identity.md`
 
 ## Producing the Output
 

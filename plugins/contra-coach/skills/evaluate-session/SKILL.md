@@ -1,10 +1,10 @@
 ---
 name: evaluate-session
 description: >
-  Activates the inline evaluation pipeline for Contra Coach sessions. When this skill
-  is active, every response from the creative-business-consultant agent is intercepted
-  by the orchestrator, judged against pre-written evals, and either passed through or
-  rewritten before the user sees it.
+  Activates the inline evaluation pipeline for Contra Coach sessions. When active,
+  every coaching response is evaluated against pre-written evals before the user
+  sees it. Supports two modes: fork-based (primary, for interactive sessions) and
+  named subagent fallback (for headless/SDK contexts).
 
   Use this skill when: testing the coach agent's quality, running a coaching session
   with quality assurance enabled, or when the plugin maintainer wants to evaluate
@@ -17,28 +17,60 @@ description: >
 
 # Evaluate Session
 
-This skill activates the inline evaluation pipeline for the current coaching session. When active, every coach response passes through the orchestrator → evaluator → skeptic flow before reaching the user.
+Activates the evaluation pipeline for the current coaching session. When active, every coaching response passes through the judge loop before reaching the user.
 
 ## Activation
 
 When this skill is invoked:
 
-1. Read `contra-coach-knowledge/coach-feedback.md` if it exists — this provides context on the coach's recent performance patterns
-2. Read `contra-coach-knowledge/eval-health.md` if it exists — this flags any evals currently under review
+1. Read `contra-coach-knowledge/coach-feedback.md` if it exists — context on recent performance patterns.
+2. Read `contra-coach-knowledge/eval-health.md` if it exists — flags any evals under review.
 3. Confirm to the user: "Evaluation pipeline is active. Responses may take a moment longer while they're reviewed."
-4. Hand off to the orchestrator agent for the remainder of the session
+4. Detect pipeline mode and begin evaluation on every subsequent coaching response.
 
-## What the Orchestrator Needs
+## Pipeline Modes
 
-The orchestrator manages the full pipeline as defined in `references/eval-protocol.md`. It needs access to:
-- The coach agent's output (intercepted before delivery)
-- The `evals/` directory (all skill-specific and behavioral evals)
-- The evaluator, skeptic, and tiebreaker agents
-- The `contra-coach-knowledge/` directory (for writing feedback and health logs)
+### Fork-Based (Primary)
+
+Use when running in an interactive Claude Code session where forks are available.
+
+For each coaching response:
+1. Generate the coaching response internally — do not deliver yet.
+2. Fork: "Evaluate this coaching response against the eval pipeline. Read `agents/orchestrator.md` for the full pipeline instructions."
+3. The fork inherits the full conversation context and consultant identity.
+4. The fork follows the orchestrator pipeline: pre-filter evals → evaluator → skeptic → tiebreaker (if needed).
+5. The fork returns: PASS with behavioral note, or FAIL with behavioral feedback.
+6. On PASS: deliver the response. Write feedback to `contra-coach-knowledge/coach-feedback.md`.
+7. On FAIL: rewrite using the behavioral feedback (full context available — no re-serialization needed). Fork again to evaluate the rewrite. Maximum 2 attempts.
+
+### Named Subagent Fallback
+
+Use when forks are unavailable (headless mode, Agent SDK, older Claude Code versions).
+
+For each coaching response:
+1. Generate the coaching response.
+2. Spawn the orchestrator as a named subagent, passing:
+   - The coach's response
+   - Active coaching skill name
+   - User's most recent message
+   - Key conversation points
+   - Relevant knowledge file references
+3. The orchestrator runs the judge pipeline and returns: PASS/FAIL + behavioral feedback.
+4. On PASS: deliver the response.
+5. On FAIL: rewrite and re-submit to the orchestrator. Maximum 2 attempts.
+
+## Clean-Room Preservation
+
+The coaching session (you, the consultant) never sees:
+- Eval file names or content (loaded only inside the fork or orchestrator)
+- Judge scores or reasoning
+- Whether a fork or named subagent was used
+
+You receive only behavioral feedback: "Your response asked two questions — ask one." Never: "You failed the one-question-at-a-time eval."
 
 ## Deactivation
 
-The pipeline stays active for the entire session once activated. It cannot be partially disabled. At session end, the orchestrator produces a session-end report if any defaults occurred.
+The pipeline stays active for the entire session once activated. At session end, the orchestrator produces a session-end report if any defaults occurred.
 
 ## For the Plugin Maintainer
 

@@ -94,18 +94,6 @@ Each discovery skill writes its output to a specific file:
 
 If a file already exists when a skill runs, read it first and revise — do not overwrite without reading. The user has invested in these files; respect their contents.
 
-### Memory
-
-Follow the memory protocol defined in `references/memory-protocol.md`. During every conversation, capture meaningful corrections, preferences, and insights to `contra-coach-knowledge/memory.md`. At the start of each session, read the memory file and use it to avoid past mistakes and build on known preferences. Revise the memory file periodically to keep it lean and high-signal.
-
-Memory is shared across all agents in this plugin. When you write to it, tag the context (`positioning`, `voice`, `icp`, `self-discovery`, `general`) so future agents know what is relevant to them.
-
-### Coach Feedback (when the eval pipeline is active)
-
-If `contra-coach-knowledge/coach-feedback.md` exists, read the most recent entries and the "Pattern" sections at the start of each session. Use this feedback to adjust your behavior — if past sessions flagged bundling questions, be deliberate about asking one at a time. If past sessions noted generating content before the user had a chance to, hold back and let the user lead.
-
-Do not mention this file to the user. Do not reference scores, evals, or the evaluation system. This feedback simply makes you a better coach over time. See `references/eval-protocol.md` for how the pipeline works and why you stay blind to the evals themselves.
-
 ## Producing Outputs
 
 When a skill has surfaced enough material, the skill itself defines the output format (Business Identity Summary, Positioning Summary, ICP Summary, etc.). Your job is to:
