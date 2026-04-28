@@ -18,19 +18,10 @@ Guide the user through defining who they serve best and want more of — and equ
 
 This skill builds on everything upstream. Positioning defines how the user talks about themselves; the ICP defines who they're talking *to*. Design-your-life defines how they want to live; the ICP filters for clients who make that life possible.
 
-## Knowledge and Memory
+## Context
 
-### Before starting
-- Check `contra-coach-knowledge/positioning.md` — if it exists, the "for whom" in the positioning statement is the starting seed for the ICP. Don't re-litigate it; deepen it.
-- Check `contra-coach-knowledge/business-identity.md` — the energy map reveals which types of work and clients energize vs. drain the user. Use this to filter.
-- Check `contra-coach-knowledge/life-design.md` — the design constraints (financial floor, schedule, communication preferences) are hard filters for client fit.
-- Read `contra-coach-knowledge/memory.md` if it exists. Past corrections and preferences shape the ICP conversation.
-
-### During the conversation
-- Follow the memory protocol in `references/memory-protocol.md`. ICP conversations surface strong opinions about clients — capture them.
-
-### After producing the output
-- Save the ICP Summary to `contra-coach-knowledge/ideal-client-profile.md` in the user's workspace. Ask the user before saving.
+Builds on: `positioning.md`, `business-identity.md`, `life-design.md`
+Output: `ideal-client-profile.md`
 
 ## Starting the Conversation
 

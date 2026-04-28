@@ -24,22 +24,10 @@ Read past prospect/client conversations and produce a hypothesis-based observati
 
 This is not a summarization tool. It analyzes conversations through the lens of the existing coaching frameworks (positioning, ICP, energy, voice) and presents observations as hypotheses for the user to validate or correct.
 
-## Knowledge and Memory
+## Context
 
-### Before starting
-- Check `contra-coach-knowledge/positioning.md` — if it exists, compare how the user described themselves in conversations against their articulated positioning. Gaps between the two are high-value signals.
-- Check `contra-coach-knowledge/ideal-client-profile.md` — did the user actually talk to the types of clients they said they wanted? Compare conversation partners against the stated ICP.
-- Check `contra-coach-knowledge/business-identity.md` — does their natural conversation behavior match their stated identity?
-- Read `contra-coach-knowledge/memory.md` if it exists. Use past corrections and preferences to shape the analysis — don't flag patterns the user has already addressed.
-
-### During the session
-- Write observations to `contra-coach-knowledge/conversation-insights.md` — this is a temporary working document for the session
-- Follow the memory protocol in `references/memory-protocol.md` for any corrections, preferences, or self-discoveries the user reveals during the coaching that follows
-
-### After the session
-- Validated discoveries flow into permanent knowledge files through whichever coaching skill the user transitions to
-- Key insights get captured in `memory.md` per the memory protocol
-- `conversation-insights.md` can be overwritten on the next analysis — it is not a permanent artifact
+Builds on: `positioning.md`, `ideal-client-profile.md`, `business-identity.md`
+Output: `conversation-insights.md` (temporary, per-session — overwritten on next analysis)
 
 ## Reading the Materials
 
