@@ -147,7 +147,9 @@ This plugin is actively developed. The main areas for contribution:
 
 ## License
 
-MIT
+This project is licensed under the [Polyform NonCommercial 1.0.0](LICENSE.md) license. You are free to use, modify, and share this plugin for personal and non-commercial purposes.
+
+For commercial licensing, contact [support@unknowncreatives.studio](mailto:support@unknowncreatives.studio).
 
 ## Author
 
