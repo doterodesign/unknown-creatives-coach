@@ -39,7 +39,7 @@ Self-exploration modules. Each one guides a structured conversation to help the 
 - **design-your-life** — Explore what they want the business to do for their life. Values, working style, the personal life the business needs to support. Answers: *"What do I need the business to do for me?"*
 - **positioning** — Define what makes them different and where they stand in the market. Sharpens the arena and strengths into a market-facing statement.
 - **icp** — Identify their ideal client profile. Who they serve best and want more of.
-- **services** — Clarify what they offer, how they deliver it, and what outcomes they create.
+- **services** — Define what they offer, how they deliver it, and how their services relate as an ecosystem. This skill reads from `references/services/` — a set of reference files covering engagement models, delivery patterns, ecosystem types, and scope patterns. The skill file specifies which reference to read before each conversation stage. Do not load all references at once — read selectively as instructed by the skill.
 - **voice** — Articulate their tone, communication style, and how they want to come across.
 
 ### Document Builder Skills

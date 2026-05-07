@@ -43,11 +43,11 @@ Structured conversations that help you articulate different aspects of your busi
 | **design-your-life** | "What do I need the business to do for me?" — values, working style, life constraints | `life-design.md` |
 | **positioning** | "How do I want the market to see me?" — what makes you different and where you stand | `positioning.md` |
 | **icp** | "Who do I serve best?" — your ideal client profile and red flags | `ideal-client-profile.md` |
+| **services** | "What do I actually offer?" — packages, deliverables, process, engagement models, scope boundaries | `services.md` |
 | **analyze-conversations** | "What do my real conversations reveal?" — pattern analysis from past prospect/client interactions | `conversation-insights.md` |
 
 ### Coming Soon
 
-- **services** — Clarify what you offer, how you deliver it, and what outcomes you create
 - **voice** — Articulate your tone and communication style
 - **Document builders** — Intake questionnaires, pitch documents, outbound messaging, and inbound response templates built from your discovery work
 
