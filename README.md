@@ -120,6 +120,22 @@ An optional quality assurance system. When activated, every coaching response pa
 
 All outputs are saved to `unknown-creatives-coach-knowledge/` in your workspace. The coach reads existing files before starting any skill so you never repeat yourself across sessions. Memory captures corrections, preferences, and insights to improve future coaching.
 
+## Privacy and Data Storage
+
+Your coaching data stays on your device. The plugin does not include a backend, database, or cloud storage of its own.
+
+When the coach saves knowledge files (`positioning.md`, `ideal-client-profile.md`, etc.) or memory (`memory.md`), it writes them to a `unknown-creatives-coach-knowledge/` folder inside your local workspace using Claude Code's standard file system tools. In Cowork, that's whatever folder you have selected. In the CLI, it's your current working directory.
+
+Here's what lives where:
+
+| Data | Where it lives | Who controls it |
+|------|---------------|-----------------|
+| Plugin files (skills, agents, evals) | Downloaded from GitHub at install | You can inspect, fork, or modify |
+| Conversations | Processed through Anthropic's API, same as any Claude session | Subject to [Anthropic's privacy policy](https://www.anthropic.com/privacy) |
+| Knowledge files and memory | Your local filesystem, in your workspace folder | Entirely yours — plain markdown, readable, editable, deletable |
+
+The plugin never sends your coaching data to any third-party service. Installing from the Claude Marketplace works the same way — the marketplace distributes the plugin instructions, not your data.
+
 ## Contributing
 
 This plugin is actively developed. The main areas for contribution:
