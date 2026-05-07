@@ -140,7 +140,7 @@ The plugin never sends your coaching data to any third-party service. Installing
 
 This plugin is actively developed. The main areas for contribution:
 
-- **New discovery skills** — `services` and `voice` are next on the roadmap
+- **New discovery skills** — `voice` is next on the roadmap
 - **Document builder skills** — Turning discovery outputs into client-facing documents
 - **Evaluation criteria** — New evals that improve coaching quality
 - **Bug reports** — If the coach gives generic advice, that's a bug. Open an issue.

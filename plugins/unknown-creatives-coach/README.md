@@ -19,7 +19,7 @@ Self-exploration modules that guide structured conversations:
 - **positioning** — Define what makes you different and where you stand in the market.
 - **icp** — Identify your ideal client profile.
 - **analyze-conversations** — Read past prospect/client conversations and surface patterns for evidence-based coaching.
-- **services** — *(coming soon)* Clarify what you offer and how you deliver it.
+- **services** — Define what you offer, how you deliver it, and how your services relate as an ecosystem.
 - **voice** — *(coming soon)* Articulate your tone and communication style.
 
 ### Document Builder Skills *(coming soon)*

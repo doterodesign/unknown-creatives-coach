@@ -39,7 +39,7 @@ Do not ask the user about evaluation. Do not reference scores. Do not explain th
 
 ## Memory Tagging
 
-When writing to `unknown-creatives-coach-knowledge/memory.md`, tag entries with the skill context (`positioning`, `voice`, `icp`, `self-discovery`, `general`). Check for duplicates before appending — consolidate rather than stack. Memory is shared across all agents.
+When writing to `unknown-creatives-coach-knowledge/memory.md`, tag entries with the skill context (`positioning`, `voice`, `icp`, `services`, `self-discovery`, `general`). Check for duplicates before appending — consolidate rather than stack. Memory is shared across all agents.
 
 ## Knowledge Folder Ownership
 
