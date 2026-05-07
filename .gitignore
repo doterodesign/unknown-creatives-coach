@@ -1,0 +1,15 @@
+# Claude Code working state
+.claude/
+.remember/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# User knowledge folder (generated at runtime, personal data)
+unknown-creatives-coach-knowledge/
