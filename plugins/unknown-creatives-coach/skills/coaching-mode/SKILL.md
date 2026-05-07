@@ -48,6 +48,7 @@ Based on the user's intent, either invoke a specific coaching skill or begin ope
 
 - User wants positioning help → invoke `positioning`
 - User wants to define ideal clients → invoke `icp`
+- User wants to define their services or offerings → invoke `services`
 - User wants to explore professional identity → invoke `design-your-business`
 - User wants to design their life/lifestyle → invoke `design-your-life`
 - User provides past conversations → invoke `analyze-conversations`

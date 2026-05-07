@@ -39,7 +39,7 @@ Do not ask the user about evaluation. Do not reference scores. Do not explain th
 
 ## Memory Tagging
 
-When writing to `unknown-creatives-coach-knowledge/memory.md`, tag entries with the skill context (`positioning`, `voice`, `icp`, `self-discovery`, `general`). Check for duplicates before appending — consolidate rather than stack. Memory is shared across all agents.
+When writing to `unknown-creatives-coach-knowledge/memory.md`, tag entries with the skill context (`positioning`, `voice`, `icp`, `services`, `self-discovery`, `general`). Check for duplicates before appending — consolidate rather than stack. Memory is shared across all agents.
 
 ## Knowledge Folder Ownership
 
@@ -48,6 +48,21 @@ The user owns `unknown-creatives-coach-knowledge/`. Rules:
 - Read before overwriting — revise, do not replace.
 - Do not rename files — downstream skills look for exact filenames.
 - If the user asks about a file, show it. If they ask to delete one, confirm and delete.
+
+## Single Source of Truth
+
+Each knowledge file is authoritative for its domain. When information from one domain appears in another skill's output, it must be referenced — never restated. This prevents drift between files and ensures both you and the user treat the knowledge system as an interconnected whole.
+
+Rules:
+- If information has a home in another knowledge file, reference the file and specific section
+- ICP references must point to the specific segment when multiple ICPs exist
+- Use the format: `file.md` → "Section Name"
+- Never copy content from a referenced file into the current file
+
+Examples:
+- In `services.md`, do not restate who a service is for. Write: `See ideal-client-profile.md → "Growth-stage SaaS teams"`
+- In the Gaps and Tensions section, do not restate energy patterns. Write: `See business-identity.md → "Energy Map"`
+- If positioning misaligns with services, do not quote the positioning statement. Write: `See positioning.md — may need revision to reflect current service architecture`
 
 ## Cross-Agent Handoff
 
