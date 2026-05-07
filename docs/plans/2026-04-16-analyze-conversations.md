@@ -13,11 +13,11 @@
 ## File Map
 
 ### New files to create
-- `plugins/contra-coach/skills/analyze-conversations/SKILL.md` — the skill definition
+- `plugins/unknown-creatives-coach/skills/analyze-conversations/SKILL.md` — the skill definition
 
 ### Existing files to modify
-- `plugins/contra-coach/agents/creative-business-consultant.md` — add skill to Available Skills list + add routing logic for conversation materials
-- `plugins/contra-coach/.claude-plugin/plugin.json` — bump version to 0.3.0
+- `plugins/unknown-creatives-coach/agents/creative-business-consultant.md` — add skill to Available Skills list + add routing logic for conversation materials
+- `plugins/unknown-creatives-coach/.claude-plugin/plugin.json` — bump version to 0.3.0
 
 ---
 
@@ -26,7 +26,7 @@
 The core skill file. This is the main deliverable.
 
 **Files:**
-- Create: `plugins/contra-coach/skills/analyze-conversations/SKILL.md`
+- Create: `plugins/unknown-creatives-coach/skills/analyze-conversations/SKILL.md`
 
 - [ ] **Step 1: Create the skill file**
 
@@ -60,13 +60,13 @@ This is not a summarization tool. It analyzes conversations through the lens of 
 ## Knowledge and Memory
 
 ### Before starting
-- Check `contra-coach-knowledge/positioning.md` — if it exists, compare how the user described themselves in conversations against their articulated positioning. Gaps between the two are high-value signals.
-- Check `contra-coach-knowledge/ideal-client-profile.md` — did the user actually talk to the types of clients they said they wanted? Compare conversation partners against the stated ICP.
-- Check `contra-coach-knowledge/business-identity.md` — does their natural conversation behavior match their stated identity?
-- Read `contra-coach-knowledge/memory.md` if it exists. Use past corrections and preferences to shape the analysis — don't flag patterns the user has already addressed.
+- Check `unknown-creatives-coach-knowledge/positioning.md` — if it exists, compare how the user described themselves in conversations against their articulated positioning. Gaps between the two are high-value signals.
+- Check `unknown-creatives-coach-knowledge/ideal-client-profile.md` — did the user actually talk to the types of clients they said they wanted? Compare conversation partners against the stated ICP.
+- Check `unknown-creatives-coach-knowledge/business-identity.md` — does their natural conversation behavior match their stated identity?
+- Read `unknown-creatives-coach-knowledge/memory.md` if it exists. Use past corrections and preferences to shape the analysis — don't flag patterns the user has already addressed.
 
 ### During the session
-- Write observations to `contra-coach-knowledge/conversation-insights.md` — this is a temporary working document for the session
+- Write observations to `unknown-creatives-coach-knowledge/conversation-insights.md` — this is a temporary working document for the session
 - Follow the memory protocol in `references/memory-protocol.md` for any corrections, preferences, or self-discoveries the user reveals during the coaching that follows
 
 ### After the session
@@ -136,7 +136,7 @@ Do NOT present observations as conclusions. Do NOT tell the user who they are. P
 
 ### Writing the insights file
 
-Save the observation map to `contra-coach-knowledge/conversation-insights.md` so it persists during the session. Format:
+Save the observation map to `unknown-creatives-coach-knowledge/conversation-insights.md` so it persists during the session. Format:
 
 ```markdown
 # Conversation Insights
@@ -191,8 +191,8 @@ The coaching skill that picks up will read `conversation-insights.md` as additio
 - [ ] **Step 2: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/skills/analyze-conversations/SKILL.md
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/skills/analyze-conversations/SKILL.md
 git commit -m "feat: add analyze-conversations skill for evidence-based coaching"
 ```
 
@@ -203,11 +203,11 @@ git commit -m "feat: add analyze-conversations skill for evidence-based coaching
 Add the new skill to the coach agent's skill listing so it knows the skill exists.
 
 **Files:**
-- Modify: `plugins/contra-coach/agents/creative-business-consultant.md`
+- Modify: `plugins/unknown-creatives-coach/agents/creative-business-consultant.md`
 
 - [ ] **Step 1: Add analyze-conversations to the Discovery Skills list**
 
-In `plugins/contra-coach/agents/creative-business-consultant.md`, find the section that reads:
+In `plugins/unknown-creatives-coach/agents/creative-business-consultant.md`, find the section that reads:
 
 ```markdown
 ### Discovery Skills
@@ -241,8 +241,8 @@ The only change is adding the `analyze-conversations` line at the top of the lis
 - [ ] **Step 2: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/agents/creative-business-consultant.md
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/agents/creative-business-consultant.md
 git commit -m "feat: add analyze-conversations to coach agent skill listing"
 ```
 
@@ -253,11 +253,11 @@ git commit -m "feat: add analyze-conversations to coach agent skill listing"
 Add the routing rule for when the user provides conversation materials.
 
 **Files:**
-- Modify: `plugins/contra-coach/agents/creative-business-consultant.md`
+- Modify: `plugins/unknown-creatives-coach/agents/creative-business-consultant.md`
 
 - [ ] **Step 1: Add conversation materials routing**
 
-In `plugins/contra-coach/agents/creative-business-consultant.md`, find the routing logic section. Locate this block:
+In `plugins/unknown-creatives-coach/agents/creative-business-consultant.md`, find the routing logic section. Locate this block:
 
 ```markdown
 **When the user has existing documents in their workspace:**
@@ -279,8 +279,8 @@ The new routing rule is inserted BEFORE the existing documents rule. This is int
 - [ ] **Step 2: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/agents/creative-business-consultant.md
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/agents/creative-business-consultant.md
 git commit -m "feat: add routing for conversation materials to coach agent"
 ```
 
@@ -289,21 +289,21 @@ git commit -m "feat: add routing for conversation materials to coach agent"
 ## Task 4: Bump Version and Push
 
 **Files:**
-- Modify: `plugins/contra-coach/.claude-plugin/plugin.json`
+- Modify: `plugins/unknown-creatives-coach/.claude-plugin/plugin.json`
 
 - [ ] **Step 1: Update plugin.json**
 
-Replace the contents of `plugins/contra-coach/.claude-plugin/plugin.json` with:
+Replace the contents of `plugins/unknown-creatives-coach/.claude-plugin/plugin.json` with:
 
 ```json
 {
-  "name": "contra-coach",
+  "name": "unknown-creatives-coach",
   "version": "0.3.0",
   "description": "A creative business consultant that helps freelancers and independent creatives articulate their business identity — positioning, ideal clients, services, voice — and turn it into usable documents. Includes an inline evaluation pipeline for quality assurance and conversation analysis for evidence-based coaching.",
   "author": {
     "name": "Dimitri Otero"
   },
-  "keywords": ["coaching", "freelance", "creative", "business", "positioning", "contra", "evaluation", "conversations"]
+  "keywords": ["coaching", "freelance", "creative", "business", "positioning", "unknown-creatives", "evaluation", "conversations"]
 }
 ```
 
@@ -312,15 +312,15 @@ Changes from 0.2.0: version bumped to 0.3.0, description updated to mention conv
 - [ ] **Step 2: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/.claude-plugin/plugin.json
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/.claude-plugin/plugin.json
 git commit -m "chore: bump version to 0.3.0 for analyze-conversations skill"
 ```
 
 - [ ] **Step 3: Push**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
+cd ~/Documents/GITHUB/unknown-creatives-coach
 GITHUB_TOKEN="" git push
 ```
 
@@ -332,26 +332,26 @@ GITHUB_TOKEN="" git push
 
 Run:
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-find plugins/contra-coach/skills -type f | sort
+cd ~/Documents/GITHUB/unknown-creatives-coach
+find plugins/unknown-creatives-coach/skills -type f | sort
 ```
 
 Expected: 6 skills including the new one:
 ```
-plugins/contra-coach/skills/analyze-conversations/SKILL.md
-plugins/contra-coach/skills/design-your-business/SKILL.md
-plugins/contra-coach/skills/design-your-life/SKILL.md
-plugins/contra-coach/skills/evaluate-session/SKILL.md
-plugins/contra-coach/skills/icp/SKILL.md
-plugins/contra-coach/skills/positioning/SKILL.md
+plugins/unknown-creatives-coach/skills/analyze-conversations/SKILL.md
+plugins/unknown-creatives-coach/skills/design-your-business/SKILL.md
+plugins/unknown-creatives-coach/skills/design-your-life/SKILL.md
+plugins/unknown-creatives-coach/skills/evaluate-session/SKILL.md
+plugins/unknown-creatives-coach/skills/icp/SKILL.md
+plugins/unknown-creatives-coach/skills/positioning/SKILL.md
 ```
 
 - [ ] **Step 2: Verify coach agent has new skill and routing**
 
 Run:
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-grep -c "analyze-conversations" plugins/contra-coach/agents/creative-business-consultant.md
+cd ~/Documents/GITHUB/unknown-creatives-coach
+grep -c "analyze-conversations" plugins/unknown-creatives-coach/agents/creative-business-consultant.md
 ```
 
 Expected: at least 2 matches (skill listing + routing logic)
@@ -360,7 +360,7 @@ Expected: at least 2 matches (skill listing + routing logic)
 
 Run:
 ```bash
-cat plugins/contra-coach/.claude-plugin/plugin.json | grep version
+cat plugins/unknown-creatives-coach/.claude-plugin/plugin.json | grep version
 ```
 
 Expected: `"version": "0.3.0"`

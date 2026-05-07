@@ -1,7 +1,7 @@
 ---
 name: evaluate-session
 description: >
-  Activates the inline evaluation pipeline for Contra Coach sessions. When active,
+  Activates the inline evaluation pipeline for Unknown Creatives Coach sessions. When active,
   every coaching response is evaluated against pre-written evals before the user
   sees it. Supports two modes: fork-based (primary, for interactive sessions) and
   named subagent fallback (for headless/SDK contexts).
@@ -23,8 +23,8 @@ Activates the evaluation pipeline for the current coaching session. When active,
 
 When this skill is invoked:
 
-1. Read `contra-coach-knowledge/coach-feedback.md` if it exists — context on recent performance patterns.
-2. Read `contra-coach-knowledge/eval-health.md` if it exists — flags any evals under review.
+1. Read `unknown-creatives-coach-knowledge/coach-feedback.md` if it exists — context on recent performance patterns.
+2. Read `unknown-creatives-coach-knowledge/eval-health.md` if it exists — flags any evals under review.
 3. Confirm to the user: "Evaluation pipeline is active. Responses may take a moment longer while they're reviewed."
 4. Detect pipeline mode and begin evaluation on every subsequent coaching response.
 
@@ -40,7 +40,7 @@ For each coaching response:
 3. The fork inherits the full conversation context and consultant identity.
 4. The fork follows the orchestrator pipeline: pre-filter evals → evaluator → skeptic → tiebreaker (if needed).
 5. The fork returns: PASS with behavioral note, or FAIL with behavioral feedback.
-6. On PASS: deliver the response. Write feedback to `contra-coach-knowledge/coach-feedback.md`.
+6. On PASS: deliver the response. Write feedback to `unknown-creatives-coach-knowledge/coach-feedback.md`.
 7. On FAIL: rewrite using the behavioral feedback (full context available — no re-serialization needed). Fork again to evaluate the rewrite. Maximum 2 attempts.
 
 ### Named Subagent Fallback
@@ -75,6 +75,6 @@ The pipeline stays active for the entire session once activated. At session end,
 ## For the Plugin Maintainer
 
 To review pipeline health:
-- Check `contra-coach-knowledge/eval-health.md` for flagged evals and threshold metrics
-- Check `contra-coach-knowledge/coach-feedback.md` for recurring patterns in judge feedback
+- Check `unknown-creatives-coach-knowledge/eval-health.md` for flagged evals and threshold metrics
+- Check `unknown-creatives-coach-knowledge/coach-feedback.md` for recurring patterns in judge feedback
 - Use the eval-creator agent to revise any evals flagged as REVIEW NEEDED

@@ -30,7 +30,7 @@ Do not summarize these files to the user. Do not announce that you have read the
 
 ## 2. Load Context
 
-Scan `contra-coach-knowledge/` for existing discovery files:
+Scan `unknown-creatives-coach-knowledge/` for existing discovery files:
 - `business-identity.md`, `positioning.md`, `ideal-client-profile.md`
 - `life-design.md`, `voice.md`, `services.md`
 - `memory.md` — past corrections and preferences

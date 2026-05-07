@@ -80,14 +80,14 @@ The handoff should feel natural, not mechanical. The coach doesn't say "Now invo
 
 ### Before Starting
 
-- Check `contra-coach-knowledge/positioning.md` — if it exists, the analysis can compare what the user said in conversations against what they articulated in prior coaching. Gaps between the two are high-value signals.
-- Check `contra-coach-knowledge/ideal-client-profile.md` — same comparison. Did the user actually talk to the types of clients they said they wanted?
-- Check `contra-coach-knowledge/business-identity.md` — does their natural conversation behavior match their stated identity?
-- Read `contra-coach-knowledge/memory.md` for language preferences, corrections, and known patterns.
+- Check `unknown-creatives-coach-knowledge/positioning.md` — if it exists, the analysis can compare what the user said in conversations against what they articulated in prior coaching. Gaps between the two are high-value signals.
+- Check `unknown-creatives-coach-knowledge/ideal-client-profile.md` — same comparison. Did the user actually talk to the types of clients they said they wanted?
+- Check `unknown-creatives-coach-knowledge/business-identity.md` — does their natural conversation behavior match their stated identity?
+- Read `unknown-creatives-coach-knowledge/memory.md` for language preferences, corrections, and known patterns.
 
 ### During the Session
 
-- Write observations to `contra-coach-knowledge/conversation-insights.md` — this is the temporary working document for the session
+- Write observations to `unknown-creatives-coach-knowledge/conversation-insights.md` — this is the temporary working document for the session
 - Follow the memory protocol in `references/memory-protocol.md` for any corrections, preferences, or self-discoveries the user reveals during the coaching conversation that follows
 
 ### After the Session
@@ -122,18 +122,18 @@ The existing behavioral evals (one-question-at-a-time, never-answer-for-user, pu
 ## Plugin File Changes
 
 ### New files
-- `plugins/contra-coach/skills/analyze-conversations/SKILL.md` — the skill definition
+- `plugins/unknown-creatives-coach/skills/analyze-conversations/SKILL.md` — the skill definition
 
 ### Modified files
-- `plugins/contra-coach/agents/creative-business-consultant.md` — add routing for conversation materials
-- `plugins/contra-coach/.claude-plugin/plugin.json` — bump version to 0.3.0
+- `plugins/unknown-creatives-coach/agents/creative-business-consultant.md` — add routing for conversation materials
+- `plugins/unknown-creatives-coach/.claude-plugin/plugin.json` — bump version to 0.3.0
 
 ### Eval files (created later via eval-creator)
-- `plugins/contra-coach/evals/analyze-conversations/observation-quality.md`
-- `plugins/contra-coach/evals/analyze-conversations/hypothesis-framing.md`
-- `plugins/contra-coach/evals/analyze-conversations/theme-relevance.md`
-- `plugins/contra-coach/evals/analyze-conversations/input-adaptation.md`
-- `plugins/contra-coach/evals/analyze-conversations/handoff-quality.md`
+- `plugins/unknown-creatives-coach/evals/analyze-conversations/observation-quality.md`
+- `plugins/unknown-creatives-coach/evals/analyze-conversations/hypothesis-framing.md`
+- `plugins/unknown-creatives-coach/evals/analyze-conversations/theme-relevance.md`
+- `plugins/unknown-creatives-coach/evals/analyze-conversations/input-adaptation.md`
+- `plugins/unknown-creatives-coach/evals/analyze-conversations/handoff-quality.md`
 
 ## What This Spec Does NOT Cover
 
