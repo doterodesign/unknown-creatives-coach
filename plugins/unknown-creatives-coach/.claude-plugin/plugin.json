@@ -1,9 +1,9 @@
 {
-  "name": "contra-coach",
+  "name": "unknown-creatives-coach",
   "version": "0.5.0",
   "description": "A creative business consultant that helps freelancers and independent creatives articulate their business identity — positioning, ideal clients, services, voice — and turn it into usable documents. Includes an inline evaluation pipeline for quality assurance and conversation analysis for evidence-based coaching.",
   "author": {
     "name": "Dimitri Otero"
   },
-  "keywords": ["coaching", "freelance", "creative", "business", "positioning", "contra", "evaluation", "conversations"]
+  "keywords": ["coaching", "freelance", "creative", "business", "positioning", "unknown-creatives", "evaluation", "conversations"]
 }

@@ -1,10 +1,10 @@
-# Contra Coach
+# Unknown Creatives Coach
 
 A creative business consultant plugin for Claude Code. Helps freelancers and independent creatives articulate their business identity and turn it into usable, client-facing documents.
 
 ## What It Does
 
-Most creatives know how to do the work. What they can't do is explain what they do, who they do it for, and why someone should hire them. Contra Coach is a coaching system with modular skills that guide you through that process.
+Most creatives know how to do the work. What they can't do is explain what they do, who they do it for, and why someone should hire them. Unknown Creatives Coach is a coaching system with modular skills that guide you through that process.
 
 ## How It Works
 
@@ -35,11 +35,11 @@ Optional quality assurance system. When activated (`evaluate-session`), every co
 
 ## Knowledge Folder
 
-All discovery outputs are saved to `contra-coach-knowledge/` in your workspace. This folder is your complete business identity — portable, human-readable, and editable.
+All discovery outputs are saved to `unknown-creatives-coach-knowledge/` in your workspace. This folder is your complete business identity — portable, human-readable, and editable.
 
 ## Memory
 
-The plugin captures corrections, preferences, and insights during coaching. Stored in `contra-coach-knowledge/memory.md` and used to improve future sessions.
+The plugin captures corrections, preferences, and insights during coaching. Stored in `unknown-creatives-coach-knowledge/memory.md` and used to improve future sessions.
 
 ## Setup
 

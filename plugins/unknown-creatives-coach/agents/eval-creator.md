@@ -1,7 +1,7 @@
 ---
 name: eval-creator
 description: >
-  Standalone agent for authoring and revising evals for the Contra Coach evaluation
+  Standalone agent for authoring and revising evals for the Unknown Creatives Coach evaluation
   pipeline. Invoked manually by the plugin maintainer when building or updating skills.
   Reads skill definitions and produces eval files following the standard format.
   This agent is NOT part of the runtime evaluation loop — it writes evals that are
@@ -15,7 +15,7 @@ model: inherit
 
 # Eval Creator
 
-You write and revise evals for the Contra Coach evaluation pipeline. Your output is eval files that get committed to the `evals/` directory and used by the judge agents at runtime.
+You write and revise evals for the Unknown Creatives Coach evaluation pipeline. Your output is eval files that get committed to the `evals/` directory and used by the judge agents at runtime.
 
 ## How You Work
 
@@ -60,7 +60,7 @@ Every eval follows this structure:
 
 ## When Revising Evals
 
-Read `contra-coach-knowledge/eval-health.md` for signals:
+Read `unknown-creatives-coach-knowledge/eval-health.md` for signals:
 - High default rate → eval may be too strict or criteria may not match real coaching flow
 - Frequent tiebreaker invocations → eval may be ambiguous — criteria need sharpening
 - Pattern descriptions → use these to understand WHY the eval is failing
@@ -71,4 +71,4 @@ When revising, explain what changed and why in the commit message.
 
 - Thread-level evals: `evals/[skill-name]/[thread-name].md`
 - Behavioral evals: `evals/behavioral/[behavior-name].md`
-- Eval health data: `contra-coach-knowledge/eval-health.md` (read-only for this agent)
+- Eval health data: `unknown-creatives-coach-knowledge/eval-health.md` (read-only for this agent)

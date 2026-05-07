@@ -15,47 +15,47 @@
 ### New files to create
 
 **Agents:**
-- `plugins/contra-coach/agents/orchestrator.md` — Runtime orchestrator
-- `plugins/contra-coach/agents/eval-creator.md` — Standalone eval authoring agent
-- `plugins/contra-coach/agents/evaluator.md` — First judge
-- `plugins/contra-coach/agents/skeptic.md` — Adversarial second judge
-- `plugins/contra-coach/agents/tiebreaker.md` — On-demand third judge
+- `plugins/unknown-creatives-coach/agents/orchestrator.md` — Runtime orchestrator
+- `plugins/unknown-creatives-coach/agents/eval-creator.md` — Standalone eval authoring agent
+- `plugins/unknown-creatives-coach/agents/evaluator.md` — First judge
+- `plugins/unknown-creatives-coach/agents/skeptic.md` — Adversarial second judge
+- `plugins/unknown-creatives-coach/agents/tiebreaker.md` — On-demand third judge
 
 **Skills:**
-- `plugins/contra-coach/skills/evaluate-session/SKILL.md` — Orchestration skill
+- `plugins/unknown-creatives-coach/skills/evaluate-session/SKILL.md` — Orchestration skill
 
 **References:**
-- `plugins/contra-coach/references/eval-protocol.md` — How the judging system works
+- `plugins/unknown-creatives-coach/references/eval-protocol.md` — How the judging system works
 
 **Evals (behavioral — cross-cutting):**
-- `plugins/contra-coach/evals/behavioral/one-question-at-a-time.md`
-- `plugins/contra-coach/evals/behavioral/never-answer-for-user.md`
-- `plugins/contra-coach/evals/behavioral/push-back-on-vague.md`
-- `plugins/contra-coach/evals/behavioral/summarize-and-reflect.md`
-- `plugins/contra-coach/evals/behavioral/peer-tone-not-teacher.md`
-- `plugins/contra-coach/evals/behavioral/direct-no-filler.md`
-- `plugins/contra-coach/evals/behavioral/check-knowledge-folder.md`
+- `plugins/unknown-creatives-coach/evals/behavioral/one-question-at-a-time.md`
+- `plugins/unknown-creatives-coach/evals/behavioral/never-answer-for-user.md`
+- `plugins/unknown-creatives-coach/evals/behavioral/push-back-on-vague.md`
+- `plugins/unknown-creatives-coach/evals/behavioral/summarize-and-reflect.md`
+- `plugins/unknown-creatives-coach/evals/behavioral/peer-tone-not-teacher.md`
+- `plugins/unknown-creatives-coach/evals/behavioral/direct-no-filler.md`
+- `plugins/unknown-creatives-coach/evals/behavioral/check-knowledge-folder.md`
 
 **Evals (positioning — thread-level):**
-- `plugins/contra-coach/evals/positioning/positioning-statement.md`
-- `plugins/contra-coach/evals/positioning/differentiation.md`
-- `plugins/contra-coach/evals/positioning/proof.md`
-- `plugins/contra-coach/evals/positioning/resistance-check.md`
+- `plugins/unknown-creatives-coach/evals/positioning/positioning-statement.md`
+- `plugins/unknown-creatives-coach/evals/positioning/differentiation.md`
+- `plugins/unknown-creatives-coach/evals/positioning/proof.md`
+- `plugins/unknown-creatives-coach/evals/positioning/resistance-check.md`
 
 **Evals (icp — thread-level):**
-- `plugins/contra-coach/evals/icp/best-clients.md`
-- `plugins/contra-coach/evals/icp/client-profile.md`
-- `plugins/contra-coach/evals/icp/anti-profile.md`
-- `plugins/contra-coach/evals/icp/qualification-framework.md`
+- `plugins/unknown-creatives-coach/evals/icp/best-clients.md`
+- `plugins/unknown-creatives-coach/evals/icp/client-profile.md`
+- `plugins/unknown-creatives-coach/evals/icp/anti-profile.md`
+- `plugins/unknown-creatives-coach/evals/icp/qualification-framework.md`
 
 **Evals (design-your-business — thread-level):**
-- `plugins/contra-coach/evals/design-your-business/arena-scoping.md`
-- `plugins/contra-coach/evals/design-your-business/energy-mapping.md`
+- `plugins/unknown-creatives-coach/evals/design-your-business/arena-scoping.md`
+- `plugins/unknown-creatives-coach/evals/design-your-business/energy-mapping.md`
 
 ### Existing files to modify
 
-- `plugins/contra-coach/agents/creative-business-consultant.md` — Add instruction to read `coach-feedback.md` at session start
-- `plugins/contra-coach/.claude-plugin/plugin.json` — Update version to 0.2.0
+- `plugins/unknown-creatives-coach/agents/creative-business-consultant.md` — Add instruction to read `coach-feedback.md` at session start
+- `plugins/unknown-creatives-coach/.claude-plugin/plugin.json` — Update version to 0.2.0
 
 ---
 
@@ -64,14 +64,14 @@
 The foundation document that all agents reference. Must be written first because every agent definition points to it.
 
 **Files:**
-- Create: `plugins/contra-coach/references/eval-protocol.md`
+- Create: `plugins/unknown-creatives-coach/references/eval-protocol.md`
 
 - [ ] **Step 1: Write the eval protocol**
 
 ```markdown
 # Eval Protocol
 
-This document defines how the Contra Coach evaluation pipeline operates. All judge agents (evaluator, skeptic, tiebreaker) and the orchestrator follow this protocol.
+This document defines how the Unknown Creatives Coach evaluation pipeline operates. All judge agents (evaluator, skeptic, tiebreaker) and the orchestrator follow this protocol.
 
 ## System Purpose
 
@@ -118,7 +118,7 @@ Persistent disagreement on the same eval across sessions is a signal that the ev
 
 ## Feedback to Coach
 
-After each judged exchange, the orchestrator writes a feedback entry to `contra-coach-knowledge/coach-feedback.md`. This feedback is:
+After each judged exchange, the orchestrator writes a feedback entry to `unknown-creatives-coach-knowledge/coach-feedback.md`. This feedback is:
 - Behavioral ("you asked two questions in one message") not evaluative ("you failed eval X")
 - Specific enough to be actionable
 - Never references the evals by name or content
@@ -127,7 +127,7 @@ The coach reads this file at session start and uses it to improve. Over time, th
 
 ## Eval Health
 
-The orchestrator maintains `contra-coach-knowledge/eval-health.md` to track:
+The orchestrator maintains `unknown-creatives-coach-knowledge/eval-health.md` to track:
 - Which evals cause repeated defaults (2-attempt loop exhausted)
 - Which evals trigger frequent tiebreaker invocations
 - Overall rewrite rate and threshold health
@@ -138,7 +138,7 @@ This file is for the plugin maintainer to review — it surfaces miscalibrated e
 
 When defaults occurred during a session, the orchestrator presents a brief summary to the user:
 
-> "Quick note: during this session, [N] of my responses went through a quality review that couldn't fully resolve. I used my best judgment for those. The details have been logged — you can review them in `contra-coach-knowledge/eval-health.md` if you'd like to see what was flagged."
+> "Quick note: during this session, [N] of my responses went through a quality review that couldn't fully resolve. I used my best judgment for those. The details have been logged — you can review them in `unknown-creatives-coach-knowledge/eval-health.md` if you'd like to see what was flagged."
 
 When no defaults occurred, no report is shown.
 
@@ -152,8 +152,8 @@ When no defaults occurred, no report is shown.
 - [ ] **Step 2: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/references/eval-protocol.md
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/references/eval-protocol.md
 git commit -m "docs: add eval protocol reference for evaluation pipeline"
 ```
 
@@ -164,13 +164,13 @@ git commit -m "docs: add eval protocol reference for evaluation pipeline"
 The cross-cutting evals that apply to every coach exchange. These are derived directly from the coaching behaviors defined in the existing agent and skill files.
 
 **Files:**
-- Create: `plugins/contra-coach/evals/behavioral/one-question-at-a-time.md`
-- Create: `plugins/contra-coach/evals/behavioral/never-answer-for-user.md`
-- Create: `plugins/contra-coach/evals/behavioral/push-back-on-vague.md`
-- Create: `plugins/contra-coach/evals/behavioral/summarize-and-reflect.md`
-- Create: `plugins/contra-coach/evals/behavioral/peer-tone-not-teacher.md`
-- Create: `plugins/contra-coach/evals/behavioral/direct-no-filler.md`
-- Create: `plugins/contra-coach/evals/behavioral/check-knowledge-folder.md`
+- Create: `plugins/unknown-creatives-coach/evals/behavioral/one-question-at-a-time.md`
+- Create: `plugins/unknown-creatives-coach/evals/behavioral/never-answer-for-user.md`
+- Create: `plugins/unknown-creatives-coach/evals/behavioral/push-back-on-vague.md`
+- Create: `plugins/unknown-creatives-coach/evals/behavioral/summarize-and-reflect.md`
+- Create: `plugins/unknown-creatives-coach/evals/behavioral/peer-tone-not-teacher.md`
+- Create: `plugins/unknown-creatives-coach/evals/behavioral/direct-no-filler.md`
+- Create: `plugins/unknown-creatives-coach/evals/behavioral/check-knowledge-folder.md`
 
 - [ ] **Step 1: Create one-question-at-a-time.md**
 
@@ -380,8 +380,8 @@ High — repeating questions the user already answered destroys trust and wastes
 - [ ] **Step 8: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/evals/behavioral/
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/evals/behavioral/
 git commit -m "feat: add 7 behavioral evals for cross-cutting coaching discipline"
 ```
 
@@ -392,10 +392,10 @@ git commit -m "feat: add 7 behavioral evals for cross-cutting coaching disciplin
 Evals specific to the positioning skill's four threads. Derived from the positioning SKILL.md.
 
 **Files:**
-- Create: `plugins/contra-coach/evals/positioning/positioning-statement.md`
-- Create: `plugins/contra-coach/evals/positioning/differentiation.md`
-- Create: `plugins/contra-coach/evals/positioning/proof.md`
-- Create: `plugins/contra-coach/evals/positioning/resistance-check.md`
+- Create: `plugins/unknown-creatives-coach/evals/positioning/positioning-statement.md`
+- Create: `plugins/unknown-creatives-coach/evals/positioning/differentiation.md`
+- Create: `plugins/unknown-creatives-coach/evals/positioning/proof.md`
+- Create: `plugins/unknown-creatives-coach/evals/positioning/resistance-check.md`
 
 - [ ] **Step 1: Create positioning-statement.md**
 
@@ -524,8 +524,8 @@ Medium — critical when resistance appears, but not applicable to every session
 - [ ] **Step 5: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/evals/positioning/
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/evals/positioning/
 git commit -m "feat: add 4 thread-level evals for positioning skill"
 ```
 
@@ -536,10 +536,10 @@ git commit -m "feat: add 4 thread-level evals for positioning skill"
 Evals specific to the ICP skill's four threads. Derived from the icp SKILL.md.
 
 **Files:**
-- Create: `plugins/contra-coach/evals/icp/best-clients.md`
-- Create: `plugins/contra-coach/evals/icp/client-profile.md`
-- Create: `plugins/contra-coach/evals/icp/anti-profile.md`
-- Create: `plugins/contra-coach/evals/icp/qualification-framework.md`
+- Create: `plugins/unknown-creatives-coach/evals/icp/best-clients.md`
+- Create: `plugins/unknown-creatives-coach/evals/icp/client-profile.md`
+- Create: `plugins/unknown-creatives-coach/evals/icp/anti-profile.md`
+- Create: `plugins/unknown-creatives-coach/evals/icp/qualification-framework.md`
 
 - [ ] **Step 1: Create best-clients.md**
 
@@ -664,8 +664,8 @@ Medium — this is the practical application of the ICP work. Important but buil
 - [ ] **Step 5: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/evals/icp/
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/evals/icp/
 git commit -m "feat: add 4 thread-level evals for ICP skill"
 ```
 
@@ -676,8 +676,8 @@ git commit -m "feat: add 4 thread-level evals for ICP skill"
 Evals for the design-your-business skill's two threads.
 
 **Files:**
-- Create: `plugins/contra-coach/evals/design-your-business/arena-scoping.md`
-- Create: `plugins/contra-coach/evals/design-your-business/energy-mapping.md`
+- Create: `plugins/unknown-creatives-coach/evals/design-your-business/arena-scoping.md`
+- Create: `plugins/unknown-creatives-coach/evals/design-your-business/energy-mapping.md`
 
 - [ ] **Step 1: Create arena-scoping.md**
 
@@ -742,8 +742,8 @@ High — energy mapping shapes which clients, services, and working styles are s
 - [ ] **Step 3: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/evals/design-your-business/
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/evals/design-your-business/
 git commit -m "feat: add 2 thread-level evals for design-your-business skill"
 ```
 
@@ -754,7 +754,7 @@ git commit -m "feat: add 2 thread-level evals for design-your-business skill"
 The first judge. Scores coach output against evals.
 
 **Files:**
-- Create: `plugins/contra-coach/agents/evaluator.md`
+- Create: `plugins/unknown-creatives-coach/agents/evaluator.md`
 
 - [ ] **Step 1: Write the evaluator agent**
 
@@ -762,7 +762,7 @@ The first judge. Scores coach output against evals.
 ---
 name: evaluator
 description: >
-  First-pass judge in the Contra Coach evaluation pipeline. Scores the coach agent's
+  First-pass judge in the Unknown Creatives Coach evaluation pipeline. Scores the coach agent's
   output against pre-written evals to determine whether it meets quality standards.
   This agent is invoked by the orchestrator — never directly by the user.
 
@@ -774,7 +774,7 @@ model: inherit
 
 # Evaluator
 
-You are the first judge in the Contra Coach evaluation pipeline. Your job is to score the coach agent's output against a set of pre-written evals and provide detailed reasoning.
+You are the first judge in the Unknown Creatives Coach evaluation pipeline. Your job is to score the coach agent's output against a set of pre-written evals and provide detailed reasoning.
 
 ## How You Work
 
@@ -836,8 +836,8 @@ Follow the eval protocol defined in `references/eval-protocol.md`.
 - [ ] **Step 2: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/agents/evaluator.md
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/agents/evaluator.md
 git commit -m "feat: add evaluator agent — first judge in eval pipeline"
 ```
 
@@ -848,7 +848,7 @@ git commit -m "feat: add evaluator agent — first judge in eval pipeline"
 The adversarial second judge. Challenges the evaluator's analysis.
 
 **Files:**
-- Create: `plugins/contra-coach/agents/skeptic.md`
+- Create: `plugins/unknown-creatives-coach/agents/skeptic.md`
 
 - [ ] **Step 1: Write the skeptic agent**
 
@@ -856,7 +856,7 @@ The adversarial second judge. Challenges the evaluator's analysis.
 ---
 name: skeptic
 description: >
-  Adversarial second judge in the Contra Coach evaluation pipeline. Receives the
+  Adversarial second judge in the Unknown Creatives Coach evaluation pipeline. Receives the
   evaluator's scores and reasoning alongside the coach output and evals, then
   challenges the evaluation — looking for weaknesses the evaluator missed or
   scores that are too generous. Invoked by the orchestrator, never directly by the user.
@@ -867,7 +867,7 @@ model: inherit
 
 # Skeptic
 
-You are the adversarial second judge in the Contra Coach evaluation pipeline. Your job is to challenge the evaluator's analysis and look for things it missed.
+You are the adversarial second judge in the Unknown Creatives Coach evaluation pipeline. Your job is to challenge the evaluator's analysis and look for things it missed.
 
 ## How You Work
 
@@ -932,8 +932,8 @@ Follow the eval protocol defined in `references/eval-protocol.md`.
 - [ ] **Step 2: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/agents/skeptic.md
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/agents/skeptic.md
 git commit -m "feat: add skeptic agent — adversarial second judge in eval pipeline"
 ```
 
@@ -944,7 +944,7 @@ git commit -m "feat: add skeptic agent — adversarial second judge in eval pipe
 The on-demand third judge. Resolves heavy disagreements.
 
 **Files:**
-- Create: `plugins/contra-coach/agents/tiebreaker.md`
+- Create: `plugins/unknown-creatives-coach/agents/tiebreaker.md`
 
 - [ ] **Step 1: Write the tiebreaker agent**
 
@@ -952,7 +952,7 @@ The on-demand third judge. Resolves heavy disagreements.
 ---
 name: tiebreaker
 description: >
-  On-demand third judge in the Contra Coach evaluation pipeline. Invoked only when
+  On-demand third judge in the Unknown Creatives Coach evaluation pipeline. Invoked only when
   the evaluator and skeptic scores diverge by more than 10 points. Receives both
   analyses anonymized (doesn't know which came from which judge) and decides the
   final score. Invoked by the orchestrator, never directly by the user.
@@ -961,7 +961,7 @@ model: inherit
 
 # Tiebreaker
 
-You are the tiebreaker judge in the Contra Coach evaluation pipeline. You are only called when the first two judges disagree significantly (>10 point gap). Your job is to make the final call.
+You are the tiebreaker judge in the Unknown Creatives Coach evaluation pipeline. You are only called when the first two judges disagree significantly (>10 point gap). Your job is to make the final call.
 
 ## How You Work
 
@@ -1013,8 +1013,8 @@ Follow the eval protocol defined in `references/eval-protocol.md`.
 - [ ] **Step 2: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/agents/tiebreaker.md
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/agents/tiebreaker.md
 git commit -m "feat: add tiebreaker agent — on-demand third judge for eval pipeline"
 ```
 
@@ -1025,7 +1025,7 @@ git commit -m "feat: add tiebreaker agent — on-demand third judge for eval pip
 The standalone agent for authoring and revising evals. Not part of the runtime pipeline.
 
 **Files:**
-- Create: `plugins/contra-coach/agents/eval-creator.md`
+- Create: `plugins/unknown-creatives-coach/agents/eval-creator.md`
 
 - [ ] **Step 1: Write the eval creator agent**
 
@@ -1033,7 +1033,7 @@ The standalone agent for authoring and revising evals. Not part of the runtime p
 ---
 name: eval-creator
 description: >
-  Standalone agent for authoring and revising evals for the Contra Coach evaluation
+  Standalone agent for authoring and revising evals for the Unknown Creatives Coach evaluation
   pipeline. Invoked manually by the plugin maintainer when building or updating skills.
   Reads skill definitions and produces eval files following the standard format.
   This agent is NOT part of the runtime evaluation loop — it writes evals that are
@@ -1047,7 +1047,7 @@ model: inherit
 
 # Eval Creator
 
-You write and revise evals for the Contra Coach evaluation pipeline. Your output is eval files that get committed to the `evals/` directory and used by the judge agents at runtime.
+You write and revise evals for the Unknown Creatives Coach evaluation pipeline. Your output is eval files that get committed to the `evals/` directory and used by the judge agents at runtime.
 
 ## How You Work
 
@@ -1092,7 +1092,7 @@ Every eval follows this structure:
 
 ## When Revising Evals
 
-Read `contra-coach-knowledge/eval-health.md` for signals:
+Read `unknown-creatives-coach-knowledge/eval-health.md` for signals:
 - High default rate → eval may be too strict or criteria may not match real coaching flow
 - Frequent tiebreaker invocations → eval may be ambiguous — criteria need sharpening
 - Pattern descriptions → use these to understand WHY the eval is failing
@@ -1103,14 +1103,14 @@ When revising, explain what changed and why in the commit message.
 
 - Thread-level evals: `evals/[skill-name]/[thread-name].md`
 - Behavioral evals: `evals/behavioral/[behavior-name].md`
-- Eval health data: `contra-coach-knowledge/eval-health.md` (read-only for this agent)
+- Eval health data: `unknown-creatives-coach-knowledge/eval-health.md` (read-only for this agent)
 ```
 
 - [ ] **Step 2: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/agents/eval-creator.md
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/agents/eval-creator.md
 git commit -m "feat: add eval-creator agent — standalone tool for authoring evals"
 ```
 
@@ -1121,7 +1121,7 @@ git commit -m "feat: add eval-creator agent — standalone tool for authoring ev
 The central agent that manages the runtime pipeline. This is the most complex agent.
 
 **Files:**
-- Create: `plugins/contra-coach/agents/orchestrator.md`
+- Create: `plugins/unknown-creatives-coach/agents/orchestrator.md`
 
 - [ ] **Step 1: Write the orchestrator agent**
 
@@ -1129,7 +1129,7 @@ The central agent that manages the runtime pipeline. This is the most complex ag
 ---
 name: orchestrator
 description: >
-  Runtime orchestrator for the Contra Coach evaluation pipeline. Intercepts every
+  Runtime orchestrator for the Unknown Creatives Coach evaluation pipeline. Intercepts every
   coach agent response, routes it to judges, manages the 2-attempt rewrite loop,
   writes feedback to the coach's memory, and tracks eval health. This agent manages
   information flow between all other agents in the pipeline, ensuring clean-room
@@ -1142,7 +1142,7 @@ model: inherit
 
 # Orchestrator
 
-You manage the Contra Coach evaluation pipeline. Every response from the creative-business-consultant agent passes through you before reaching the user. You ensure quality, manage information flow, and maintain the feedback loop.
+You manage the Unknown Creatives Coach evaluation pipeline. Every response from the creative-business-consultant agent passes through you before reaching the user. You ensure quality, manage information flow, and maintain the feedback loop.
 
 ## Core Responsibilities
 
@@ -1213,7 +1213,7 @@ Log the tiebreaker invocation to eval-health.md with which evals caused the disa
 - If the rewrite fails: DEFAULT — deliver the best-scored attempt of the two, log to eval-health.md, queue session-end report
 
 ### Step 9: Feedback
-After every judged exchange (pass or fail), write an entry to `contra-coach-knowledge/coach-feedback.md`:
+After every judged exchange (pass or fail), write an entry to `unknown-creatives-coach-knowledge/coach-feedback.md`:
 - Date and skill context
 - Exchange number in the session
 - Score achieved
@@ -1223,7 +1223,7 @@ After every judged exchange (pass or fail), write an entry to `contra-coach-know
 Periodically (every 5-10 entries), add a "Pattern" section identifying recurring feedback themes.
 
 ### Step 10: Eval Health
-Write to `contra-coach-knowledge/eval-health.md` when:
+Write to `unknown-creatives-coach-knowledge/eval-health.md` when:
 - The 2-attempt loop exhausts without passing (log which evals failed, the pattern)
 - The tiebreaker was invoked (log which evals caused disagreement)
 - At session end, update the threshold health section with session statistics
@@ -1231,7 +1231,7 @@ Write to `contra-coach-knowledge/eval-health.md` when:
 ### Step 11: Session-End Report
 If any defaults occurred during the session, present to the user:
 
-> "Quick note: during this session, [N] of my responses went through a quality review that couldn't fully resolve. I used my best judgment for those. The details have been logged — you can review them in `contra-coach-knowledge/eval-health.md` if you'd like to see what was flagged."
+> "Quick note: during this session, [N] of my responses went through a quality review that couldn't fully resolve. I used my best judgment for those. The details have been logged — you can review them in `unknown-creatives-coach-knowledge/eval-health.md` if you'd like to see what was flagged."
 
 If no defaults occurred, say nothing. The system is invisible when working correctly.
 
@@ -1255,8 +1255,8 @@ These are inviolable:
 - [ ] **Step 2: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/agents/orchestrator.md
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/agents/orchestrator.md
 git commit -m "feat: add orchestrator agent — runtime pipeline manager"
 ```
 
@@ -1267,7 +1267,7 @@ git commit -m "feat: add orchestrator agent — runtime pipeline manager"
 The orchestration skill that wires the pipeline together and is the entry point for the evaluation system.
 
 **Files:**
-- Create: `plugins/contra-coach/skills/evaluate-session/SKILL.md`
+- Create: `plugins/unknown-creatives-coach/skills/evaluate-session/SKILL.md`
 
 - [ ] **Step 1: Write the evaluate-session skill**
 
@@ -1275,7 +1275,7 @@ The orchestration skill that wires the pipeline together and is the entry point 
 ---
 name: evaluate-session
 description: >
-  Activates the inline evaluation pipeline for Contra Coach sessions. When this skill
+  Activates the inline evaluation pipeline for Unknown Creatives Coach sessions. When this skill
   is active, every response from the creative-business-consultant agent is intercepted
   by the orchestrator, judged against pre-written evals, and either passed through or
   rewritten before the user sees it.
@@ -1297,8 +1297,8 @@ This skill activates the inline evaluation pipeline for the current coaching ses
 
 When this skill is invoked:
 
-1. Read `contra-coach-knowledge/coach-feedback.md` if it exists — this provides context on the coach's recent performance patterns
-2. Read `contra-coach-knowledge/eval-health.md` if it exists — this flags any evals currently under review
+1. Read `unknown-creatives-coach-knowledge/coach-feedback.md` if it exists — this provides context on the coach's recent performance patterns
+2. Read `unknown-creatives-coach-knowledge/eval-health.md` if it exists — this flags any evals currently under review
 3. Confirm to the user: "Evaluation pipeline is active. Responses may take a moment longer while they're reviewed."
 4. Hand off to the orchestrator agent for the remainder of the session
 
@@ -1308,7 +1308,7 @@ The orchestrator manages the full pipeline as defined in `references/eval-protoc
 - The coach agent's output (intercepted before delivery)
 - The `evals/` directory (all skill-specific and behavioral evals)
 - The evaluator, skeptic, and tiebreaker agents
-- The `contra-coach-knowledge/` directory (for writing feedback and health logs)
+- The `unknown-creatives-coach-knowledge/` directory (for writing feedback and health logs)
 
 ## Deactivation
 
@@ -1317,16 +1317,16 @@ The pipeline stays active for the entire session once activated. It cannot be pa
 ## For the Plugin Maintainer
 
 To review pipeline health:
-- Check `contra-coach-knowledge/eval-health.md` for flagged evals and threshold metrics
-- Check `contra-coach-knowledge/coach-feedback.md` for recurring patterns in judge feedback
+- Check `unknown-creatives-coach-knowledge/eval-health.md` for flagged evals and threshold metrics
+- Check `unknown-creatives-coach-knowledge/coach-feedback.md` for recurring patterns in judge feedback
 - Use the eval-creator agent to revise any evals flagged as REVIEW NEEDED
 ```
 
 - [ ] **Step 2: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/skills/evaluate-session/
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/skills/evaluate-session/
 git commit -m "feat: add evaluate-session skill — entry point for eval pipeline"
 ```
 
@@ -1337,42 +1337,42 @@ git commit -m "feat: add evaluate-session skill — entry point for eval pipelin
 Update the coach agent to read coach-feedback.md, and bump the plugin version.
 
 **Files:**
-- Modify: `plugins/contra-coach/agents/creative-business-consultant.md:66-68`
-- Modify: `plugins/contra-coach/.claude-plugin/plugin.json`
+- Modify: `plugins/unknown-creatives-coach/agents/creative-business-consultant.md:66-68`
+- Modify: `plugins/unknown-creatives-coach/.claude-plugin/plugin.json`
 
 - [ ] **Step 1: Add coach-feedback.md reading to the coach agent**
 
-In `plugins/contra-coach/agents/creative-business-consultant.md`, find the "First Move: Gather Context" section (line 65) and add before it:
+In `plugins/unknown-creatives-coach/agents/creative-business-consultant.md`, find the "First Move: Gather Context" section (line 65) and add before it:
 
 ```markdown
 ### Session Start: Read Feedback
 
-Before any conversation, check for `contra-coach-knowledge/coach-feedback.md`. If it exists, read the most recent entries and the "Pattern" sections. Use this feedback to adjust your coaching behavior — if past sessions flagged bundling questions, be deliberate about asking one at a time. If past sessions noted generating content before the user had a chance to, hold back and let the user lead.
+Before any conversation, check for `unknown-creatives-coach-knowledge/coach-feedback.md`. If it exists, read the most recent entries and the "Pattern" sections. Use this feedback to adjust your coaching behavior — if past sessions flagged bundling questions, be deliberate about asking one at a time. If past sessions noted generating content before the user had a chance to, hold back and let the user lead.
 
 Do not mention this file to the user. Do not reference scores, evals, or the evaluation system. This feedback simply makes you a better coach over time.
 ```
 
 - [ ] **Step 2: Update plugin.json version**
 
-Replace the contents of `plugins/contra-coach/.claude-plugin/plugin.json`:
+Replace the contents of `plugins/unknown-creatives-coach/.claude-plugin/plugin.json`:
 
 ```json
 {
-  "name": "contra-coach",
+  "name": "unknown-creatives-coach",
   "version": "0.2.0",
   "description": "A creative business consultant that helps freelancers and independent creatives articulate their business identity — positioning, ideal clients, services, voice — and turn it into usable documents. Includes an inline evaluation pipeline for quality assurance.",
   "author": {
     "name": "Dimitri Otero"
   },
-  "keywords": ["coaching", "freelance", "creative", "business", "positioning", "contra", "evaluation"]
+  "keywords": ["coaching", "freelance", "creative", "business", "positioning", "unknown-creatives", "evaluation"]
 }
 ```
 
 - [ ] **Step 3: Commit**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-git add plugins/contra-coach/agents/creative-business-consultant.md plugins/contra-coach/.claude-plugin/plugin.json
+cd ~/Documents/GITHUB/unknown-creatives-coach
+git add plugins/unknown-creatives-coach/agents/creative-business-consultant.md plugins/unknown-creatives-coach/.claude-plugin/plugin.json
 git commit -m "feat: coach reads feedback memory + bump version to 0.2.0"
 ```
 
@@ -1386,51 +1386,51 @@ Verify the complete file structure matches the spec.
 
 Run:
 ```bash
-cd ~/Documents/GITHUB/contra-coach
-find plugins/contra-coach -type f | sort
+cd ~/Documents/GITHUB/unknown-creatives-coach
+find plugins/unknown-creatives-coach -type f | sort
 ```
 
 Expected output:
 ```
-plugins/contra-coach/.claude-plugin/plugin.json
-plugins/contra-coach/README.md
-plugins/contra-coach/agents/creative-business-consultant.md
-plugins/contra-coach/agents/eval-creator.md
-plugins/contra-coach/agents/evaluator.md
-plugins/contra-coach/agents/orchestrator.md
-plugins/contra-coach/agents/skeptic.md
-plugins/contra-coach/agents/tiebreaker.md
-plugins/contra-coach/evals/behavioral/check-knowledge-folder.md
-plugins/contra-coach/evals/behavioral/direct-no-filler.md
-plugins/contra-coach/evals/behavioral/never-answer-for-user.md
-plugins/contra-coach/evals/behavioral/one-question-at-a-time.md
-plugins/contra-coach/evals/behavioral/peer-tone-not-teacher.md
-plugins/contra-coach/evals/behavioral/push-back-on-vague.md
-plugins/contra-coach/evals/behavioral/summarize-and-reflect.md
-plugins/contra-coach/evals/design-your-business/arena-scoping.md
-plugins/contra-coach/evals/design-your-business/energy-mapping.md
-plugins/contra-coach/evals/icp/anti-profile.md
-plugins/contra-coach/evals/icp/best-clients.md
-plugins/contra-coach/evals/icp/client-profile.md
-plugins/contra-coach/evals/icp/qualification-framework.md
-plugins/contra-coach/evals/positioning/differentiation.md
-plugins/contra-coach/evals/positioning/positioning-statement.md
-plugins/contra-coach/evals/positioning/proof.md
-plugins/contra-coach/evals/positioning/resistance-check.md
-plugins/contra-coach/references/eval-protocol.md
-plugins/contra-coach/references/memory-protocol.md
-plugins/contra-coach/skills/design-your-business/SKILL.md
-plugins/contra-coach/skills/design-your-life/SKILL.md
-plugins/contra-coach/skills/evaluate-session/SKILL.md
-plugins/contra-coach/skills/icp/SKILL.md
-plugins/contra-coach/skills/positioning/SKILL.md
+plugins/unknown-creatives-coach/.claude-plugin/plugin.json
+plugins/unknown-creatives-coach/README.md
+plugins/unknown-creatives-coach/agents/creative-business-consultant.md
+plugins/unknown-creatives-coach/agents/eval-creator.md
+plugins/unknown-creatives-coach/agents/evaluator.md
+plugins/unknown-creatives-coach/agents/orchestrator.md
+plugins/unknown-creatives-coach/agents/skeptic.md
+plugins/unknown-creatives-coach/agents/tiebreaker.md
+plugins/unknown-creatives-coach/evals/behavioral/check-knowledge-folder.md
+plugins/unknown-creatives-coach/evals/behavioral/direct-no-filler.md
+plugins/unknown-creatives-coach/evals/behavioral/never-answer-for-user.md
+plugins/unknown-creatives-coach/evals/behavioral/one-question-at-a-time.md
+plugins/unknown-creatives-coach/evals/behavioral/peer-tone-not-teacher.md
+plugins/unknown-creatives-coach/evals/behavioral/push-back-on-vague.md
+plugins/unknown-creatives-coach/evals/behavioral/summarize-and-reflect.md
+plugins/unknown-creatives-coach/evals/design-your-business/arena-scoping.md
+plugins/unknown-creatives-coach/evals/design-your-business/energy-mapping.md
+plugins/unknown-creatives-coach/evals/icp/anti-profile.md
+plugins/unknown-creatives-coach/evals/icp/best-clients.md
+plugins/unknown-creatives-coach/evals/icp/client-profile.md
+plugins/unknown-creatives-coach/evals/icp/qualification-framework.md
+plugins/unknown-creatives-coach/evals/positioning/differentiation.md
+plugins/unknown-creatives-coach/evals/positioning/positioning-statement.md
+plugins/unknown-creatives-coach/evals/positioning/proof.md
+plugins/unknown-creatives-coach/evals/positioning/resistance-check.md
+plugins/unknown-creatives-coach/references/eval-protocol.md
+plugins/unknown-creatives-coach/references/memory-protocol.md
+plugins/unknown-creatives-coach/skills/design-your-business/SKILL.md
+plugins/unknown-creatives-coach/skills/design-your-life/SKILL.md
+plugins/unknown-creatives-coach/skills/evaluate-session/SKILL.md
+plugins/unknown-creatives-coach/skills/icp/SKILL.md
+plugins/unknown-creatives-coach/skills/positioning/SKILL.md
 ```
 
 - [ ] **Step 2: Verify plugin.json version is 0.2.0**
 
 Run:
 ```bash
-cat plugins/contra-coach/.claude-plugin/plugin.json
+cat plugins/unknown-creatives-coach/.claude-plugin/plugin.json
 ```
 
 Expected: version field shows "0.2.0"
@@ -1439,7 +1439,7 @@ Expected: version field shows "0.2.0"
 
 Run:
 ```bash
-grep -c "coach-feedback.md" plugins/contra-coach/agents/creative-business-consultant.md
+grep -c "coach-feedback.md" plugins/unknown-creatives-coach/agents/creative-business-consultant.md
 ```
 
 Expected: at least 1 match
@@ -1447,7 +1447,7 @@ Expected: at least 1 match
 - [ ] **Step 4: Final commit and push**
 
 ```bash
-cd ~/Documents/GITHUB/contra-coach
+cd ~/Documents/GITHUB/unknown-creatives-coach
 git status
 GITHUB_TOKEN="" git push
 ```
