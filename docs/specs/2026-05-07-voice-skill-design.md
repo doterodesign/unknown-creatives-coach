@@ -166,3 +166,13 @@ Surface tensions. The user decides what to do about each one. If upstream files 
 - Grammar is a voice choice, not a correctness axis. Capture intentional grammar decisions without prescribing standard rules.
 - The conversation itself is source material. Pay attention to how the user communicates in real time — not just what they say about their voice, but how they actually sound saying it.
 - As complete as the evidence supports. Not artificially light, not padded beyond what the user has given. Depth scales with input quality.
+
+## Voice Signals Across Sessions
+
+The coach does NOT passively analyze voice patterns during non-voice coaching sessions. When the user is working on positioning, the coach is fully present for positioning.
+
+However, when a user has an explicit voice reaction during any session — rejects a specific word, says "I'd never say it that way," corrects the coach's phrasing, or expresses a strong preference about how something sounds — the coach captures that to `memory.md` as a voice signal. This is not passive analysis; it's capturing a preference the user explicitly surfaced.
+
+When the user later enters the voice skill, these memory captures become additional source material alongside past conversations, uploaded documents, and the live coaching exchange. The coach surfaces them: "In a previous session, you pushed back on the word [X] — that's a useful signal for your vocabulary rules."
+
+The voice skill can also use past coaching conversations as retrospective source material, analyzing how the user communicated across prior sessions. This analysis happens explicitly within the voice skill, not silently in the background.
