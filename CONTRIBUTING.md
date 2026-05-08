@@ -13,13 +13,13 @@ Thanks for your interest in contributing to Unknown Creatives Coach.
 
 ### New Discovery Skills
 
-The `services` and `voice` skills are next on the roadmap. A good discovery skill:
-- Guides a structured conversation through 2-3 threads
+A good discovery skill:
+- Guides a structured conversation through discovery threads
 - Asks one question at a time (never stacks multiple questions)
 - Produces a clear output format saved to the knowledge folder
 - Builds on existing knowledge files when available
 
-Look at `plugins/unknown-creatives-coach/skills/design-your-business/SKILL.md` for the pattern.
+Look at `plugins/unknown-creatives-coach/skills/voice/SKILL.md` or `plugins/unknown-creatives-coach/skills/services/SKILL.md` for the pattern.
 
 ### Document Builder Skills
 
