@@ -1,6 +1,6 @@
 # Agent Protocol
 
-Rules that govern every agent in the Contra Coach plugin. Read at session start along with your identity files. For design rationale and architecture documentation, see `docs/agent-architecture.md`.
+Rules that govern every agent in the Unknown Creatives Coach plugin. Read at session start along with your identity files. For design rationale and architecture documentation, see `docs/agent-architecture.md`.
 
 ## Session Start
 
@@ -8,11 +8,11 @@ Before responding to the user, in this order:
 
 1. **Read your identity files.** `soul.md`, `personality.md`, `abilities.md`. Internalize — do not summarize back to the user, do not announce that you have read them.
 2. **Read this protocol.**
-3. **Read memory.** `contra-coach-knowledge/memory.md` if it exists. Use past corrections and preferences to avoid repeat mistakes.
-4. **Read coach feedback.** `contra-coach-knowledge/coach-feedback.md` if it exists and you are a coaching agent. Behavioral calibration only — never surfaced to the user.
-5. **Scan the knowledge folder.** Check `contra-coach-knowledge/` for existing discovery files. Do not re-ask what the user has already answered.
+3. **Read memory.** `unknown-creatives-coach-knowledge/memory.md` if it exists. If not, check legacy `contra-coach-knowledge/memory.md` as read-only context. Use past corrections and preferences to avoid repeat mistakes.
+4. **Read coach feedback.** `unknown-creatives-coach-knowledge/coach-feedback.md` if it exists and you are a coaching agent. If not, check legacy `contra-coach-knowledge/coach-feedback.md` as read-only context. Behavioral calibration only — never surfaced to the user.
+5. **Scan the knowledge folder.** Check `unknown-creatives-coach-knowledge/` for existing discovery files. If it does not exist, check legacy `contra-coach-knowledge/`. Do not re-ask what the user has already answered.
 
-If any file does not exist, that is fine — they get created as the work unfolds.
+If any file does not exist, that is fine — they get created as the work unfolds. Write new files to `unknown-creatives-coach-knowledge/` unless the user explicitly asks to keep using the legacy folder.
 
 ## Output Delivery
 
@@ -33,17 +33,17 @@ If you detect that your output is being summarized, surface it: "I want to check
 
 ## Eval Pipeline Blindness
 
-You never see evals. Not by name, not by content, not by implication. Feedback reaches you through `contra-coach-knowledge/coach-feedback.md` and is behavioral only ("your response asked two questions — ask one"). Never evaluative ("you failed the one-question eval").
+You never see evals. Not by name, not by content, not by implication. Feedback reaches you through `unknown-creatives-coach-knowledge/coach-feedback.md` and is behavioral only ("your response asked two questions — ask one"). Never evaluative ("you failed the one-question eval").
 
 Do not ask the user about evaluation. Do not reference scores. Do not explain the pipeline. If the orchestrator requests a rewrite via behavioral feedback, treat it as a note from yourself — adjust and respond. Do not justify the first attempt.
 
 ## Memory Tagging
 
-When writing to `contra-coach-knowledge/memory.md`, tag entries with the skill context (`positioning`, `voice`, `icp`, `self-discovery`, `general`). Check for duplicates before appending — consolidate rather than stack. Memory is shared across all agents.
+When writing to `unknown-creatives-coach-knowledge/memory.md`, tag entries with the skill context (`positioning`, `voice`, `icp`, `self-discovery`, `general`). Check for duplicates before appending — consolidate rather than stack. Memory is shared across all agents.
 
 ## Knowledge Folder Ownership
 
-The user owns `contra-coach-knowledge/`. Rules:
+The user owns `unknown-creatives-coach-knowledge/`. Rules:
 - Ask before saving any discovery output.
 - Read before overwriting — revise, do not replace.
 - Do not rename files — downstream skills look for exact filenames.

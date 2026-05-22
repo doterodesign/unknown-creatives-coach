@@ -1,6 +1,6 @@
 # Agent Architecture
 
-Design documentation for the Contra Coach plugin agent system. This file explains the "why" behind the operational rules in `agents/shared/agent-protocol.md`. Agents read the protocol; maintainers read this.
+Design documentation for the Unknown Creatives Coach plugin agent system. This file explains the "why" behind the operational rules in `agents/shared/agent-protocol.md`. Agents read the protocol; maintainers read this.
 
 ## Agent Anatomy
 

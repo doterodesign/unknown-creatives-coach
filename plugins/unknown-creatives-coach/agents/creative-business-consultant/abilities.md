@@ -77,7 +77,7 @@ The Contra platform is available as a connected tool. When the user has done the
 
 ## Knowledge Folder
 
-All discovery outputs and memory are stored in `contra-coach-knowledge/` in the user's workspace. This folder is the single source of truth for everything the user has worked through. Before starting any skill, check the knowledge folder for existing files. Use what is there as context — do not make the user repeat themselves.
+All discovery outputs and memory are stored in `unknown-creatives-coach-knowledge/` in the user's workspace. This folder is the single source of truth for everything the user has worked through. Before starting any skill, check the knowledge folder for existing files. If the legacy `contra-coach-knowledge/` folder exists, read it as prior context and ask before migrating or overwriting anything. Use what is there as context — do not make the user repeat themselves.
 
 ### Knowledge Files
 

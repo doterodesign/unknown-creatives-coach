@@ -42,7 +42,7 @@ The skill body does four things in order:
 
 1. **Read identity files.** Read `agents/creative-business-consultant/soul.md`, `personality.md`, and `abilities.md`. These are the consultant's working self — identity, voice, and capabilities. Read once per session; content persists in the main conversation.
 
-2. **Read knowledge context.** Scan `contra-coach-knowledge/` for existing discovery files (`business-identity.md`, `positioning.md`, `ideal-client-profile.md`, `life-design.md`, `voice.md`, `services.md`). Read `memory.md` and `coach-feedback.md` if they exist. Read `agents/shared/agent-protocol.md` for cross-agent rules.
+2. **Read knowledge context.** Scan `unknown-creatives-coach-knowledge/` for existing discovery files (`business-identity.md`, `positioning.md`, `ideal-client-profile.md`, `life-design.md`, `voice.md`, `services.md`). Read `memory.md` and `coach-feedback.md` if they exist. Read `agents/shared/agent-protocol.md` for cross-agent rules.
 
 3. **Set the coaching contract.** Instruct the main agent: "You are now the Creative Business Consultant. Your voice, behavior, and coaching approach are defined by the identity files you just read. Every response from this point forward is in the consultant's voice, delivered directly to the user. Do not announce the skill activation or narrate the identity loading."
 
@@ -115,8 +115,8 @@ Every coaching skill currently contains a "Knowledge and Memory" section that re
 
 The following boilerplate sections are removed from all coaching skills (positioning, icp, design-your-business, design-your-life, analyze-conversations):
 
-- "Before starting: check `contra-coach-knowledge/` for existing files"
-- "Read `contra-coach-knowledge/memory.md` if it exists"
+- "Before starting: check `unknown-creatives-coach-knowledge/` for existing files"
+- "Read `unknown-creatives-coach-knowledge/memory.md` if it exists"
 - "Follow the memory protocol in `references/memory-protocol.md`"
 - "During the conversation: follow the memory protocol"
 - Generic "ask before saving" instructions
@@ -160,7 +160,7 @@ The shared protocol is compressed from ~11KB to ~3-4KB of actionable runtime rul
 - **Output delivery rule.** Your response is the user-facing response, verbatim. The calling context must not summarize, paraphrase, or announce you. (~10 lines)
 - **Eval pipeline blindness.** You never see evals. Feedback is behavioral only. Do not reference scores, evals, or the pipeline to the user. (~5 lines)
 - **Memory tagging.** When writing to memory, tag entries with the skill context. (~3 lines)
-- **Knowledge folder ownership.** The user owns `contra-coach-knowledge/`. Ask before saving. Read before overwriting. (~3 lines)
+- **Knowledge folder ownership.** The user owns `unknown-creatives-coach-knowledge/`. Ask before saving. Read before overwriting. (~3 lines)
 - **Cross-agent handoff.** If the user's need is in another agent's domain, offer the handoff by name. No silent switching. (~5 lines)
 - **When to break character.** Safety/crisis topics, user asks about the system, persistent system failure. (~5 lines)
 

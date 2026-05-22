@@ -1,4 +1,4 @@
-# Contra Coach Evaluation Pipeline — Design Spec
+# Unknown Creatives Coach Evaluation Pipeline — Design Spec
 
 ## Overview
 
@@ -217,7 +217,7 @@ Track the rewrite rate in eval-health.md. If more than ~30% of responses hit the
 
 When any defaults occurred during the session, the orchestrator presents a brief, non-alarming summary:
 
-> "Quick note: during this session, [N] of my responses went through a quality review that couldn't fully resolve. I used my best judgment for those. The details have been logged — you can review them in `contra-coach-knowledge/eval-health.md` if you'd like to see what was flagged."
+> "Quick note: during this session, [N] of my responses went through a quality review that couldn't fully resolve. I used my best judgment for those. The details have been logged — you can review them in `unknown-creatives-coach-knowledge/eval-health.md` if you'd like to see what was flagged."
 
 When no defaults occurred, no report is shown. The system is invisible when it's working well.
 
@@ -231,9 +231,9 @@ When no defaults occurred, no report is shown. The system is invisible when it's
 ## Plugin File Structure (updated)
 
 ```
-contra-coach/
+unknown-creatives-coach/
 ├── .claude-plugin/marketplace.json
-└── plugins/contra-coach/
+└── plugins/unknown-creatives-coach/
     ├── .claude-plugin/plugin.json
     ├── agents/
     │   ├── creative-business-consultant.md    (existing — the coach)

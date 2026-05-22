@@ -1,6 +1,6 @@
 # Eval Protocol
 
-This document defines how the Contra Coach evaluation pipeline operates. The evaluator, skeptic, tiebreaker, and orchestrator agents all reference this protocol as their source of truth. Each agent can operate independently by reading this document.
+This document defines how the Unknown Creatives Coach evaluation pipeline operates. The evaluator, skeptic, tiebreaker, and orchestrator agents all reference this protocol as their source of truth. Each agent can operate independently by reading this document.
 
 ## System Purpose
 

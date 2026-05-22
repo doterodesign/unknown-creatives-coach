@@ -91,7 +91,7 @@ Do NOT present observations as conclusions. Do NOT tell the user who they are. P
 
 ### Writing the insights file
 
-Save the observation map to `contra-coach-knowledge/conversation-insights.md` so it persists during the session. Format:
+Save the observation map to `unknown-creatives-coach-knowledge/conversation-insights.md` so it persists during the session. Format:
 
 ```markdown
 # Conversation Insights

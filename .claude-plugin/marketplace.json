@@ -1,14 +1,14 @@
 {
-  "name": "contra-coach",
+  "name": "unknown-creatives-coach",
   "owner": {
     "name": "Dimitri Otero",
     "url": "https://github.com/doterodesign"
   },
   "plugins": [
     {
-      "name": "contra-coach",
+      "name": "unknown-creatives-coach",
       "description": "Helps freelancers and independent creatives articulate their business identity — positioning, ideal clients, services, voice — and turn it into usable documents.",
-      "source": "./plugins/contra-coach"
+      "source": "./plugins/unknown-creatives-coach"
     }
   ]
 }

@@ -1,10 +1,12 @@
 # Memory Protocol
 
-This document defines how the Contra Coach plugin captures, stores, and revises memory. Every skill and the agent follow this protocol.
+This document defines how the Unknown Creatives Coach plugin captures, stores, and revises memory. Every skill and the agent follow this protocol.
 
 ## What Memory Is
 
-Memory is a single file — `contra-coach-knowledge/memory.md` — that lives in the user's workspace alongside the structured knowledge files. It captures conversational signals that don't belong in a structured knowledge file yet but are important to remember across sessions.
+Memory is a single file — `unknown-creatives-coach-knowledge/memory.md` — that lives in the user's workspace alongside the structured knowledge files. It captures conversational signals that don't belong in a structured knowledge file yet but are important to remember across sessions.
+
+If a workspace still has the legacy `contra-coach-knowledge/memory.md` file, read it as prior context. Write new memory to `unknown-creatives-coach-knowledge/memory.md` unless the user explicitly asks to continue using the legacy folder or migrate it.
 
 Memory is a **working scratchpad**, not a log. It stays lean and high-signal through active revision.
 
@@ -93,7 +95,7 @@ The user owns this file. If they ask to see their memory, show them the contents
 
 The memory file lives at:
 ```
-contra-coach-knowledge/memory.md
+unknown-creatives-coach-knowledge/memory.md
 ```
 
 This is inside the same knowledge folder as all other discovery outputs. It gets created automatically on the first memory-worthy event.
