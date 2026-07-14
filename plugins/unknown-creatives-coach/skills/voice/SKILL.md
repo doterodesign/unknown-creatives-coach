@@ -1,16 +1,13 @@
 ---
 name: voice
 description: >
-  This skill should be used when the user wants to discover and define their studio's
-  communication voice — how it sounds, what it values, how it adapts across contexts,
-  and what it filters out. Use when someone says "help me define my voice," "how should
-  my studio sound," "I need to figure out my tone," "my writing doesn't sound like me,"
-  "I want to be more consistent in how I communicate," "help me with my tone and voice,"
-  or when the creative-business-consultant agent routes to voice work.
-  Also triggers on: "communication style," "brand voice," "studio voice," "how I write,"
-  "how I come across," "my tone," "voice guidelines," "writing style," "I sound generic,"
-  "I don't know how I want to sound," "my emails don't sound like me,"
-  or any request to articulate, structure, or refine how the user's studio communicates.
+  Use when the user wants to discover and define their studio's communication
+  voice — how it sounds, what it values, how it adapts across contexts, and what it
+  filters out. Use when someone says "my writing doesn't sound like me," "I sound
+  generic," "I want to be more consistent in how I communicate," "help me define my
+  voice," or when the creative-business-consultant agent routes to voice work. Also
+  triggers on: "brand voice," "voice guidelines," or any request to articulate,
+  structure, or refine how the user's studio communicates.
 ---
 
 # Voice
@@ -18,6 +15,8 @@ description: >
 Guide the user through discovering and defining their studio's communication voice — how it sounds, what it values, how it adapts across contexts, what it filters out. The output is a structured voice specification (`voice.md`) that downstream tools consume as a runtime dependency when producing content.
 
 This skill does NOT change how the coach speaks. The coach remains in its own personality (personality.md) throughout. It builds voice.md *for* the user's studio, as a portable asset they take with them. The coach never adopts the user's discovered voice.
+
+**Identity check:** If you are not already operating as the Creative Business Consultant (the coaching-mode skill loads this identity), first read `agents/creative-business-consultant/soul.md`, `agents/creative-business-consultant/personality.md`, `agents/creative-business-consultant/abilities.md`, and `agents/shared/agent-protocol.md`. Internalize silently, then continue.
 
 ## Context
 

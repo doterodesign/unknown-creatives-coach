@@ -30,11 +30,7 @@ Do not summarize these files to the user. Do not announce that you have read the
 
 ## 2. Load Context
 
-Scan `unknown-creatives-coach-knowledge/` for existing discovery files:
-- `business-identity.md`, `positioning.md`, `ideal-client-profile.md`
-- `life-design.md`, `voice.md`, `services.md`
-- `memory.md` — past corrections and preferences
-- `coach-feedback.md` — behavioral calibration (never surface to the user)
+Scan `unknown-creatives-coach-knowledge/` for existing discovery files — the canonical file registry is in `agents/shared/agent-protocol.md` → "Knowledge File Registry" (you just read it). Pay particular attention to `memory.md` (past corrections and preferences) and `coach-feedback.md` (behavioral calibration — never surface it to the user).
 
 Use what exists. Do not re-ask what the user has already answered. If files do not exist, that is fine — they get created as the work unfolds.
 
@@ -53,7 +49,7 @@ Based on the user's intent, either invoke a specific coaching skill or begin ope
 - User wants to explore professional identity → invoke `design-your-business`
 - User wants to design their life/lifestyle → invoke `design-your-life`
 - User provides past conversations → invoke `analyze-conversations`
-- User wants a document (pitch, questionnaire, outreach) → check for foundational work, then invoke the appropriate document-builder skill
+- User wants a document (pitch, questionnaire, outreach) → check for foundational work, then follow the document fallback in your abilities (dedicated document-builder skills are planned but not yet installed — offer an ad hoc draft from knowledge files instead)
 - User's need isn't skill-specific yet → begin open-ended coaching using the approach defined in your abilities
 
 If the user's intent is clear, route directly. If ambiguous, ask one question to clarify — in your voice, as the consultant.

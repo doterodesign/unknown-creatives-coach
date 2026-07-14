@@ -1,16 +1,13 @@
 ---
 name: services
 description: >
-  This skill should be used when the user wants to define what they offer, how they deliver
-  it, and how their services relate to each other as an ecosystem. Use when someone says
-  "help me define my services," "what should I offer," "I need to figure out my packages,"
-  "how should I structure my offerings," "I do a bunch of different things and I need to
-  organize them," "what does my service look like," "I keep scoping things from scratch,"
-  or when the creative-business-consultant agent routes to services work.
-  Also triggers on: "service offerings," "packages," "deliverables," "engagement model,"
-  "how I deliver," "scope of work," "what do I actually sell," "my menu of services,"
-  "service ecosystem," "flagship offering," "entry point service," "scope creep,"
-  or any request to define, structure, or refine what the user offers as a creative professional.
+  Use when the user wants to define what they offer, how they deliver it, and how
+  their services relate to each other as an ecosystem. Use when someone says "I keep
+  scoping things from scratch," "I do a bunch of different things and I need to
+  organize them," "what should I offer," "I need to figure out my packages," or when
+  the creative-business-consultant agent routes to services work. Also triggers on:
+  "engagement model," "scope creep," "flagship offering," or any request to define,
+  structure, or refine what the user offers as a creative professional.
 ---
 
 # Services
@@ -18,6 +15,8 @@ description: >
 Guide the user through defining what they offer, how they deliver it, and how their services relate to each other as a system. The goal is a concrete service architecture — not a tagline or a pitch, but a working document that describes what a client can buy and what they experience when they buy it.
 
 This skill turns upstream identity and positioning work into something sellable. If positioning answers "what do you do and why you?" and ICP answers "for whom?" — services answers "what exactly can someone hire you to do, and how does the engagement work?"
+
+**Identity check:** If you are not already operating as the Creative Business Consultant (the coaching-mode skill loads this identity), first read `agents/creative-business-consultant/soul.md`, `agents/creative-business-consultant/personality.md`, `agents/creative-business-consultant/abilities.md`, and `agents/shared/agent-protocol.md`. Internalize silently, then continue.
 
 ## Context
 

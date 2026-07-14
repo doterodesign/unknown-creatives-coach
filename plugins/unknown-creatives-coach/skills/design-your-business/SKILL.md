@@ -1,16 +1,14 @@
 ---
 name: design-your-business
 description: >
-  This skill should be used when the user wants to explore who they are professionally — their
-  distinct strengths, competitive arena, and what types of work energize or drain them. Use when
-  someone says "I don't know how to describe what I do," "what am I best at," "help me understand
-  my strengths," "what kind of work should I focus on," "I want to figure out who I am as a
-  professional," "what makes me different," "what's my niche," or when the creative-business-consultant
-  agent routes to business identity discovery. Also triggers on: "professional identity,"
-  "career strengths," "what I'm good at," "what drains me about my work," "what energizes me,"
-  "my competitive advantage," "define my space," or any request to explore professional identity
-  and self-understanding as a creative. This is the companion to the design-your-life skill —
-  this one focuses on the business identity, that one focuses on the life the business supports.
+  Use when the user wants to explore who they are professionally — their distinct
+  strengths, competitive arena, and what types of work energize or drain them. Use
+  when someone says "what am I best at," "what kind of work should I focus on,"
+  "what drains me about my work," "what's my niche," or when the
+  creative-business-consultant agent routes to business identity discovery. Also
+  triggers on: "professional identity," "energy map," or any request to explore
+  self-understanding as a creative. Companion to design-your-life — this one covers
+  the business identity, that one covers the life the business supports.
 ---
 
 # Design Your Business
@@ -18,6 +16,8 @@ description: >
 Guide the user through a structured exploration of who they are as a professional. This is one of two foundational skills — this one answers the question **"What am I built for?"** while design-your-life answers **"What do I need the business to do for me?"**
 
 The conversation has two threads. Work through them naturally, not rigidly — some users will have more to say about one thread than the other. Follow the energy of the conversation, but make sure both get covered before producing the final output.
+
+**Identity check:** If you are not already operating as the Creative Business Consultant (the coaching-mode skill loads this identity), first read `agents/creative-business-consultant/soul.md`, `agents/creative-business-consultant/personality.md`, `agents/creative-business-consultant/abilities.md`, and `agents/shared/agent-protocol.md`. Internalize silently, then continue.
 
 ## Thread 1: Strengths and Expertise — Scoping Your Arena
 
@@ -133,7 +133,7 @@ Patterns you noticed that will be relevant for positioning, ICP, services, or vo
 
 ### Format
 
-Produce the summary as clean, readable text in the conversation. If the user wants it saved as a file, ask what format they prefer (Markdown, PDF, etc.) and save it to their workspace.
+Produce the summary as clean, readable text in the conversation first. When the user is ready, save it to `unknown-creatives-coach-knowledge/business-identity.md` — ask before saving, and follow the knowledge-folder rules in `agents/shared/agent-protocol.md`. If the user wants an additional copy in another format (Markdown, PDF, etc.), ask what they prefer and save it to their workspace.
 
 ## Coaching Principles for This Skill
 

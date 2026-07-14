@@ -1,14 +1,12 @@
 ---
 name: positioning
 description: >
-  This skill should be used when the user wants to define their market positioning — what makes
-  them different, how they stand out, and how to communicate their value to potential clients.
-  Use when someone says "help me with my positioning," "what makes me different," "how do I
-  stand out," "I need to explain what I do," "how do I differentiate myself," "I sound like
-  everyone else," or when the creative-business-consultant agent routes to positioning work.
-  Also triggers on: "value proposition," "unique selling point," "competitive advantage,"
-  "how to talk about what I do," "elevator pitch," "I don't know how to describe my work,"
-  or any request to articulate market differentiation as a creative professional.
+  Use when the user wants to define their market positioning — how they stand out
+  and how to communicate their value to potential clients. Use when someone says
+  "help me with my positioning," "what makes me different," "I sound like everyone
+  else," "how do I stand out," or when the creative-business-consultant agent routes
+  to positioning work. Also triggers on: "value proposition," "elevator pitch," or
+  any request to articulate market differentiation as a creative professional.
 ---
 
 # Positioning
@@ -16,6 +14,8 @@ description: >
 Guide the user through defining their market positioning — a clear, specific articulation of what they do, who they do it for, and why they're the right choice. Positioning is not a tagline. It's a working statement that guides everything: their website copy, their pitches, their outreach, how they answer "so what do you do?" at a dinner.
 
 This skill takes the raw material from design-your-business (arena, strengths, energy map) and sharpens it into a market-facing position. If that upstream work exists, build on it. If not, do lighter discovery inline.
+
+**Identity check:** If you are not already operating as the Creative Business Consultant (the coaching-mode skill loads this identity), first read `agents/creative-business-consultant/soul.md`, `agents/creative-business-consultant/personality.md`, `agents/creative-business-consultant/abilities.md`, and `agents/shared/agent-protocol.md`. Internalize silently, then continue.
 
 ## Context
 
@@ -81,17 +81,7 @@ Differentiation is not about being better. It's about being *different in a way 
 
 ### Types of differentiation that actually work
 
-Walk through these angles and find which ones resonate with the user:
-
-**Process differentiation** — You do the work differently. Maybe you have a specific methodology, a particular way of collaborating, or an unusual approach to discovery. Example: "I don't start with wireframes. I start by shadowing your team for a week to understand how they actually work."
-
-**Perspective differentiation** — You see things others don't because of your background, experience, or cross-disciplinary skills. Example: "I'm a designer who used to be an engineer, so I design systems that developers can actually implement without losing their minds."
-
-**Specialization differentiation** — You've gone deep in a specific area. Example: "I only work on design systems for healthcare products, so I already know the compliance constraints before the first meeting."
-
-**Outcome differentiation** — You consistently produce a specific result. Example: "Every design system I've built has reduced component development time by at least 40% within six months."
-
-**Relationship differentiation** — How you work with clients is distinctly different. Example: "I embed with your team for 3 months instead of delivering a handoff document. When I leave, your team can maintain and extend the system themselves."
+Before coaching this thread, read `references/positioning/differentiation-types.md` — a catalog of five differentiation angles (process, perspective, specialization, outcome, relationship) with examples. Present the 2-3 angles that match what you're hearing. Never prescribe; always ask which resonates.
 
 ### How to coach this thread
 
@@ -146,18 +136,7 @@ Most creatives resist specific positioning because it feels like they're turning
 
 ### Common resistance patterns
 
-**"But I can do lots of things"**
-- "You can, and nobody's saying you can't. Positioning isn't about limiting what you *can* do. It's about leading with what you *want* to be known for. You can still take other work — you're just not leading with it."
-
-**"What if I miss out on opportunities?"**
-- "Broad positioning means you're competing with everyone for every opportunity. Specific positioning means a smaller number of opportunities come to you — but they're higher quality, better fit, and you're the obvious choice. Which sounds better?"
-- "Think about it from the client's side. If you needed surgery, would you want a general doctor or a specialist? Your clients think the same way."
-
-**"I haven't figured out my niche yet"**
-- "You don't need a permanent niche. Positioning can evolve. What we're doing is picking the *current* best version based on where you are now and what's working. You can adjust it in six months."
-
-**"My work speaks for itself"**
-- "It might — for people who already see your work. But positioning is how you reach people who haven't seen it yet. It's the reason they click, respond, or take the meeting."
+The moment resistance appears — before coaching this thread — read `references/positioning/resistance-patterns.md`. It pairs the four common patterns ("but I can do lots of things," "what if I miss out on opportunities?", "I haven't figured out my niche yet," "my work speaks for itself") with rebuttal registers. Adapt the wording to the conversation; don't recite.
 
 ### How to coach this thread
 
@@ -193,7 +172,7 @@ What this positioning includes and excludes. Helps the user see the scope clearl
 
 ### Format
 
-Produce the summary as clean, readable text in the conversation. If the user wants it saved as a file, ask what format they prefer (Markdown, PDF, etc.) and save it to their workspace.
+Produce the summary as clean, readable text in the conversation first. When the user is ready, save it to `unknown-creatives-coach-knowledge/positioning.md` — ask before saving, and follow the knowledge-folder rules in `agents/shared/agent-protocol.md`. If the user wants an additional copy in another format (Markdown, PDF, etc.), ask what they prefer and save it to their workspace.
 
 ## Coaching Principles for This Skill
 

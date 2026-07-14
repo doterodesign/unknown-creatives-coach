@@ -1,14 +1,9 @@
 ---
 name: evaluate-session
 description: >
-  Activates the inline evaluation pipeline for Unknown Creatives Coach sessions. When active,
-  every coaching response is evaluated against pre-written evals before the user
-  sees it. Supports two modes: fork-based (primary, for interactive sessions) and
-  named subagent fallback (for headless/SDK contexts).
-
-  Use this skill when: testing the coach agent's quality, running a coaching session
-  with quality assurance enabled, or when the plugin maintainer wants to evaluate
-  coach performance.
+  Use when the user wants quality assurance on a coaching session — testing the
+  coach agent's quality, running a session with evaluation enabled, or when the
+  plugin maintainer wants to evaluate coach performance.
 
   Triggers on: "evaluate session", "enable quality gate", "run with evaluation",
   "test the coach", "enable eval pipeline", or any request to activate the

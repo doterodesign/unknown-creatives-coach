@@ -14,6 +14,15 @@ Three principles govern the system:
 
 **Coach never sees evals** — Judge scores, reasoning, and disagreements are never fed back to the coach in evaluative form. Feedback to the coach is behavioral only (see Feedback to Coach section). This prevents the coach from gaming the rubric rather than improving its output.
 
+## Eval Pre-Filtering
+
+Judges never receive the full eval library. The orchestrator identifies the active coaching skill and passes only:
+
+- All behavioral evals from `evals/behavioral/`
+- Thread-level evals for the active skill from `evals/[skill-name]/`
+
+Evals for other skills are excluded. If no `evals/[skill-name]/` directory exists for the active skill, the pipeline proceeds on behavioral evals alone and notes the gap in `eval-health.md` — degraded coverage must be visible, not silent.
+
 ## Scoring
 
 Judges score on a 0–100 scale.
@@ -55,20 +64,20 @@ The user never waits through more than two generation cycles.
 
 ## Judge Disagreement
 
-Disagreement is defined as a divergence of more than 10 points between any two judges scoring the same eval.
+Disagreement is defined as a divergence of more than 10 points between the evaluator's and skeptic's overall weighted scores.
 
 When disagreement exceeds this threshold:
 
-1. **Tiebreaker is invoked** — The tiebreaker agent scores the disputed eval independently.
-2. **Scores are anonymized** — The tiebreaker does not know which judge produced which score. It receives the eval, the output, and the two diverging scores without attribution.
-3. **Tiebreaker score resolves the dispute** — The tiebreaker's score replaces the disputed scores for that eval in the weighted average calculation.
-4. **Persistent disagreement is logged** — If tiebreaker invocations for the same eval occur repeatedly across sessions, this is logged to `eval-health.md` as a signal that the eval rubric may need clarification.
+1. **Tiebreaker is invoked** — The tiebreaker agent forms its own independent judgment of the output against the evals.
+2. **Analyses are anonymized** — The tiebreaker does not know which judge produced which analysis. It receives the output, the evals, and both analyses labeled without attribution.
+3. **Tiebreaker score is final** — The tiebreaker's overall score is the final score for the exchange.
+4. **Persistent disagreement is logged** — If tiebreaker invocations driven by the same eval recur across sessions, this is logged to `eval-health.md` as a signal that the eval rubric may need clarification.
 
 ## Feedback to Coach
 
-When a rewrite is requested, feedback is written to `coach-feedback.md`.
+After every judged exchange — pass or rewrite — feedback is written to `coach-feedback.md`.
 
-Feedback is **behavioral, not evaluative**. It describes what the output did or did not do — never how it scored. It never references evals by name, scores by number, or judges by role.
+Feedback is **behavioral, not evaluative**. It describes what the output did or did not do — never how it scored. It never references evals by name, scores by number, or judges by role. The coach reads `coach-feedback.md` at session start, so scores must never appear in it — score tracking belongs in `eval-health.md`, which the coach never reads.
 
 Good feedback (behavioral):
 - "The response used generic language where specificity was needed. Rewrite to ground the advice in the user's actual situation."
@@ -93,11 +102,12 @@ The coach reads the feedback and generates a second attempt without knowing it w
 
 ## Session-End Report
 
-A brief summary is appended to the session log when defaults occurred during that session.
+If any defaults occurred during the session, two things happen at session end:
 
-The report notes: which skill was running, that the output was a default (best-scored, not passing), and the score achieved.
+1. The user gets a one-sentence note in chat — that some responses went through a review that couldn't fully resolve, with a pointer to `eval-health.md`. One sentence, then move on.
+2. The full detail — which skill was running, that the output was a default (best-scored, not passing), and the score achieved — is recorded in `eval-health.md`.
 
-When the system works correctly — no defaults, no tiebreakers — the session-end report is invisible. Nothing is appended. The pipeline runs silently.
+When the system works correctly — no defaults, no tiebreakers — the session-end report is invisible. Nothing is said, nothing is appended. The pipeline runs silently.
 
 ## UX
 

@@ -1,16 +1,14 @@
 ---
 name: design-your-life
 description: >
-  This skill should be used when the user wants to explore what they want their life to look like
-  as a business owner — their values, working style preferences, and the personal life the business
-  needs to support. Use when someone says "how do I want to live," "what do I want out of my
-  business," "work-life balance," "what are my values," "how should I structure my business,"
-  "I'm burned out," "I want more freedom," "what kind of life do I want," or when the
-  creative-business-consultant agent routes to life design discovery. Also triggers on: "personal
-  values," "working style," "lifestyle design," "what matters to me," "non-negotiables,"
-  "how I want to work," "financial goals," "my ideal week," or any request to think through what
-  the business should do for their life. This is the companion to the design-your-business skill —
-  that one focuses on professional identity, this one focuses on the life the business supports.
+  Use when the user wants to explore what they want their life to look like as a
+  business owner — values, working style, and the personal life the business needs
+  to support. Use when someone says "I'm burned out," "I want more freedom," "what
+  do I want out of my business," "work-life balance," or when the
+  creative-business-consultant agent routes to life design discovery. Also triggers
+  on: "non-negotiables," "my ideal week," "financial goals," or any request to
+  think through what the business should do for their life. Companion to
+  design-your-business — that one covers professional identity.
 ---
 
 # Design Your Life
@@ -20,6 +18,8 @@ Guide the user through a structured exploration of what they want their life to 
 Most creative professionals build their business first and then try to fit their life around it. This skill inverts that. Define the life first, then use those constraints to shape the business.
 
 The conversation has three threads. Work through them naturally, not rigidly. Follow the conversation, but make sure all three get covered before producing the final output.
+
+**Identity check:** If you are not already operating as the Creative Business Consultant (the coaching-mode skill loads this identity), first read `agents/creative-business-consultant/soul.md`, `agents/creative-business-consultant/personality.md`, `agents/creative-business-consultant/abilities.md`, and `agents/shared/agent-protocol.md`. Internalize silently, then continue.
 
 ## Thread 1: Values — Your Operating Principles
 
@@ -165,7 +165,7 @@ Connections to other discovery skills. Things like: "Your financial floor sugges
 
 ### Format
 
-Produce the summary as clean, readable text in the conversation. If the user wants it saved as a file, ask what format they prefer (Markdown, PDF, etc.) and save it to their workspace.
+Produce the summary as clean, readable text in the conversation first. When the user is ready, save it to `unknown-creatives-coach-knowledge/life-design.md` — ask before saving, and follow the knowledge-folder rules in `agents/shared/agent-protocol.md`. If the user wants an additional copy in another format (Markdown, PDF, etc.), ask what they prefer and save it to their workspace.
 
 ## Coaching Principles for This Skill
 

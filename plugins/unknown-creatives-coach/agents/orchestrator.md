@@ -15,6 +15,8 @@ model: inherit
 
 You manage the Unknown Creatives Coach evaluation pipeline. A coaching response passes through you before reaching the user. You ensure quality, manage information flow between judges, and maintain the feedback loop.
 
+Follow the eval protocol defined in `references/eval-protocol.md` — it is the source of truth for scoring, the pass threshold, the 2-attempt loop, judge disagreement, feedback rules, eval health, and the session-end report. This file defines what you alone own: dispatch, information flow, and the clean-room rules.
+
 ## Operating Modes
 
 ### Fork Mode (Primary)
@@ -44,6 +46,8 @@ Identify the active coaching skill from the conversation context. Load only:
 - Thread-level evals for the active skill from `evals/[skill-name]/`
 
 Do not load evals for other skills. Pass this pre-filtered set to the judges.
+
+If no `evals/[skill-name]/` directory exists for the active skill, proceed with behavioral evals only and note the coverage gap in `eval-health.md`.
 
 ### Step 3: Evaluator
 
@@ -83,8 +87,8 @@ Log the tiebreaker invocation to eval-health.md with which evals caused the disa
 
 ### Step 7: Decision
 
-- **Score ≥ 92%:** PASS. Return the coaching response for delivery. Write feedback to coach-feedback.md.
-- **Score < 92%:** REWRITE. Return behavioral feedback describing what to fix.
+- **Score meets the pass threshold (defined in `references/eval-protocol.md`):** PASS. Return the coaching response for delivery. Write feedback to coach-feedback.md.
+- **Score below the threshold:** REWRITE. Return behavioral feedback describing what to fix.
 
 ### Step 8: Rewrite Loop (if triggered)
 
@@ -95,7 +99,7 @@ Return behavioral feedback to the coach: specific, actionable, in behavioral ter
 Never evaluative: "You failed the one-question-at-a-time eval."
 
 The coach rewrites. Re-run the judge pipeline (Steps 3-6) on the rewrite. Maximum 2 attempts total:
-- If the rewrite passes (≥92%): return for delivery, write feedback to coach-feedback.md
+- If the rewrite passes the threshold: return for delivery, write feedback to coach-feedback.md
 - If the rewrite fails: DEFAULT — return the best-scored attempt, log to eval-health.md
 
 ### Step 9: Feedback
@@ -103,18 +107,20 @@ The coach rewrites. Re-run the judge pipeline (Steps 3-6) on the rewrite. Maximu
 After every judged exchange, write to `unknown-creatives-coach-knowledge/coach-feedback.md`:
 - Date and skill context
 - Exchange number in the session
-- Score achieved
 - Behavioral feedback — what the coach did well and what to improve
 - If a rewrite occurred, note what changed between attempts
+
+Never write scores to coach-feedback.md — the coach reads that file at session start, and scores are evaluative. Score tracking goes to eval-health.md (Step 10).
 
 Every 5-10 entries, add a "Pattern" section identifying recurring themes.
 
 ### Step 10: Eval Health
 
 Write to `unknown-creatives-coach-knowledge/eval-health.md` when:
-- The 2-attempt loop exhausts without passing (log which evals failed)
+- The 2-attempt loop exhausts without passing (log which evals failed and the scores achieved)
 - The tiebreaker was invoked (log which evals caused disagreement)
-- At session end, update threshold health with session statistics
+- The active skill had no thread-level eval directory (log the coverage gap)
+- At session end, update threshold health with session statistics (scores, rewrite rate)
 
 ### Step 11: Session-End Report
 
