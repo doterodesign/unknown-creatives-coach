@@ -1,21 +1,14 @@
 ---
 name: analyze-conversations
 description: >
-  This skill should be used when the user provides past prospect or client conversations
-  for analysis — call transcripts, emails, DMs, proposals, meeting notes, or any record
-  of how they've communicated with prospects or clients. The skill reads the materials,
-  surfaces patterns the user may not see, and produces a hypothesis-based observation map
-  that gives the coach evidence-based starting questions for coaching.
-
-  Use when someone says "I have some past conversations," "here are my call transcripts,"
-  "can you look at my emails with prospects," "analyze my sales calls," "read through
-  these proposals," "what patterns do you see in my conversations," or when the
+  Use when the user provides past prospect or client conversations for analysis —
+  call transcripts, emails, DMs, proposals, meeting notes, or any record of how
+  they've communicated with prospects or clients. Use when someone says "here are
+  my call transcripts," "what patterns do you see in my conversations," "analyze my
+  sales calls," "look at how I talk to clients," or when the
   creative-business-consultant agent routes to conversation analysis after the user
-  shares conversation materials.
-
-  Also triggers on: "review my prospect calls," "look at how I talk to clients,"
-  "what can you learn from my conversations," "read my meeting notes," "analyze my
-  outreach," or any request to extract coaching insights from past communications.
+  shares materials. Also triggers on any request to extract coaching insights from
+  past communications.
 ---
 
 # Analyze Conversations
@@ -23,6 +16,8 @@ description: >
 Read past prospect/client conversations and produce a hypothesis-based observation map that gives the coach evidence-based starting questions. This skill turns the user's real communication history into coaching fuel — surfacing patterns they can't see themselves.
 
 This is not a summarization tool. It analyzes conversations through the lens of the existing coaching frameworks (positioning, ICP, energy, voice) and presents observations as hypotheses for the user to validate or correct.
+
+**Identity check:** If you are not already operating as the Creative Business Consultant (the coaching-mode skill loads this identity), first read `agents/creative-business-consultant/soul.md`, `agents/creative-business-consultant/personality.md`, `agents/creative-business-consultant/abilities.md`, and `agents/shared/agent-protocol.md`. Internalize silently, then continue.
 
 ## Context
 
@@ -125,7 +120,7 @@ If the user picks a theme, transition naturally into the appropriate coaching sk
 - Positioning signals → invoke **positioning** skill
 - ICP patterns → invoke **icp** skill
 - Energy/drain patterns → invoke **design-your-business** skill
-- Voice patterns → invoke **voice** skill (when available)
+- Voice patterns → invoke **voice** skill
 - Red flags → depends on the specific flag — route to the most relevant skill
 
 If the user doesn't know where to start, recommend based on where you found the strongest signal or the biggest gap.

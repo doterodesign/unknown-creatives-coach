@@ -20,7 +20,7 @@ Self-exploration modules that guide structured conversations:
 - **icp** — Identify your ideal client profile.
 - **analyze-conversations** — Read past prospect/client conversations and surface patterns for evidence-based coaching.
 - **services** — Define what you offer, how you deliver it, and how your services relate as an ecosystem.
-- **voice** — *(coming soon)* Articulate your tone and communication style.
+- **voice** — Discover and define your studio's communication voice — how it sounds, what it values, and what it filters out.
 
 ### Document Builder Skills *(coming soon)*
 

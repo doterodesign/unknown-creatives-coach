@@ -59,7 +59,7 @@ Each entry is a single line or short block with a date, context tag, and the obs
 - **2026-04-11 | self-discovery** — Surprised to realize they enjoy the selling phase. Always assumed they hated it, but what they hate is cold outreach — warm conversations energize them.
 ```
 
-Context tags use the skill name or a general category: `positioning`, `voice`, `icp`, `services`, `design-your-business`, `design-your-life`, `self-discovery`, `general`.
+Context tags use the skill name or a general category — the canonical tag list lives in `agents/shared/agent-protocol.md` → "Knowledge File Registry". Do not maintain a copy here.
 
 Keep entries concise. One to three sentences maximum. Capture the signal, not the full story.
 

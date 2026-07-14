@@ -39,7 +39,27 @@ Do not ask the user about evaluation. Do not reference scores. Do not explain th
 
 ## Memory Tagging
 
-When writing to `unknown-creatives-coach-knowledge/memory.md`, tag entries with the skill context (`positioning`, `voice`, `icp`, `services`, `self-discovery`, `general`). Check for duplicates before appending — consolidate rather than stack. Memory is shared across all agents.
+When writing to `unknown-creatives-coach-knowledge/memory.md`, tag entries with a context tag from the Knowledge File Registry below. Check for duplicates before appending — consolidate rather than stack. Memory is shared across all agents. Before writing or revising memory, read `references/memory-protocol.md` for the entry format and the consolidate/graduate/prune rules.
+
+## Knowledge File Registry
+
+This is the single authority for knowledge filenames and memory tags. Other files point here — do not restate this list elsewhere; restatement is how registries drift.
+
+| File | Written by |
+|---|---|
+| `business-identity.md` | design-your-business |
+| `life-design.md` | design-your-life |
+| `positioning.md` | positioning |
+| `ideal-client-profile.md` | icp |
+| `services.md` | services |
+| `voice.md` | voice |
+| `conversation-insights.md` | analyze-conversations (temporary, per-session — may be overwritten) |
+| `brand-dna.md` | optional, user-supplied: logo, colors, company name for document formatting |
+| `memory.md` | all agents (shared memory) |
+| `coach-feedback.md` | eval pipeline (behavioral calibration — never surfaced to the user) |
+| `eval-health.md` | eval pipeline (diagnostics — coaching agents never read this) |
+
+Memory context tags: `positioning`, `voice`, `icp`, `services`, `design-your-business`, `design-your-life`, `self-discovery`, `general`.
 
 ## Knowledge Folder Ownership
 

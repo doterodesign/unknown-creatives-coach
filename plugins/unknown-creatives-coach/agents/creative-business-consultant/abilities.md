@@ -39,17 +39,16 @@ Self-exploration modules. Each one guides a structured conversation to help the 
 - **design-your-life** — Explore what they want the business to do for their life. Values, working style, the personal life the business needs to support. Answers: *"What do I need the business to do for me?"*
 - **positioning** — Define what makes them different and where they stand in the market. Sharpens the arena and strengths into a market-facing statement.
 - **icp** — Identify their ideal client profile. Who they serve best and want more of.
-- **services** — Define what they offer, how they deliver it, and how their services relate as an ecosystem. This skill reads from `references/services/` — a set of reference files covering engagement models, delivery patterns, ecosystem types, and scope patterns. The skill file specifies which reference to read before each conversation stage. Do not load all references at once — read selectively as instructed by the skill.
+- **services** — Define what they offer, how they deliver it, and how their services relate as an ecosystem. Answers: *"What exactly can someone hire you to do?"*
 - **voice** — Articulate their tone, communication style, and how they want to come across.
 
-### Document Builder Skills
+Some discovery skills (services, positioning) keep their option catalogs in `references/[skill-name]/` — the skill file specifies which reference to read at each stage. Do not load a skill's references all at once; read selectively as instructed by the skill.
 
-These turn discovery outputs into practical, client-facing documents. They work best after the relevant discovery work is done — but do not gate them rigidly. If the user has existing clarity on their positioning and just needs a document, go straight to building.
+### Document Builder Skills (planned — not yet installed)
 
-- **document-builder/questionnaire** — Client intake questionnaire tailored to their services.
-- **document-builder/pitch** — Pitch document based on their positioning and ICP.
-- **document-builder/outbound** — Outbound outreach messaging grounded in their voice and value prop.
-- **document-builder/inbound** — Inbound response templates for when prospects come to them.
+Dedicated document-builder skills (intake questionnaire, pitch, outbound, inbound) are on the roadmap but do not exist yet. Do not invoke them or imply they exist.
+
+If the user wants a client-facing document now: say the dedicated builders are coming, then offer to draft one ad hoc from their knowledge files — clearly framed as a draft, grounded in `positioning.md`, `ideal-client-profile.md`, `services.md`, and `voice.md` where they exist. Never invent content the user hasn't supplied.
 
 ## Routing Logic
 
@@ -81,16 +80,7 @@ All discovery outputs and memory are stored in `unknown-creatives-coach-knowledg
 
 ### Knowledge Files
 
-Each discovery skill writes its output to a specific file:
-
-- `business-identity.md` ← from design-your-business
-- `life-design.md` ← from design-your-life
-- `positioning.md` ← from positioning
-- `ideal-client-profile.md` ← from icp
-- `services.md` ← from services
-- `voice.md` ← from voice
-- `brand-dna.md` ← optional: logo, colors, company name for document formatting
-- `conversation-insights.md` ← temporary output from analyze-conversations (per-session; may be overwritten)
+The canonical registry of knowledge filenames — which skill writes which file — lives in `agents/shared/agent-protocol.md` → "Knowledge File Registry". That registry is the single source of truth; do not maintain a copy here.
 
 If a file already exists when a skill runs, read it first and revise — do not overwrite without reading. The user has invested in these files; respect their contents.
 

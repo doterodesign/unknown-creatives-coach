@@ -63,10 +63,7 @@ The evaluation pipeline runs when the `evaluate-session` skill is active. It ens
 
 ### Judge Loop
 
-1. **Orchestrator** pre-filters evals to behavioral + active skill only.
-2. **Evaluator** scores independently against the pre-filtered eval set.
-3. **Skeptic** challenges the evaluator's scores (adversarial second opinion).
-4. **Tiebreaker** resolves disagreements >10 points (invoked on demand, receives anonymized analyses).
+Orchestrator pre-filters evals → evaluator scores independently → skeptic challenges → tiebreaker resolves large disagreements. The mechanics — scoring, pass threshold, the 2-attempt loop, disagreement resolution, feedback rules — are defined once in `references/eval-protocol.md`; the orchestrator (`agents/orchestrator.md`) owns dispatch and information flow. This doc records only the *why*; don't restate the mechanics here, or they drift.
 
 ### Clean-Room Separation
 
@@ -78,11 +75,7 @@ The evaluation pipeline runs when the `evaluate-session` skill is active. It ens
 
 ### Eval Pre-Filtering
 
-Instead of loading all eval files, the orchestrator identifies the active skill and loads only:
-- All behavioral evals (~8 files from `evals/behavioral/`)
-- Thread-level evals for the active skill only (~2-4 files from `evals/[skill-name]/`)
-
-This reduces eval loading per judge from ~20KB to ~13-15KB and eliminates wasted N/A reasoning.
+Why pre-filter (mechanic defined in `references/eval-protocol.md`): loading only behavioral evals plus the active skill's thread-level evals reduces eval loading per judge from ~20KB to ~13-15KB and eliminates wasted N/A reasoning on evals that could never apply.
 
 ## When to Stay Silent
 

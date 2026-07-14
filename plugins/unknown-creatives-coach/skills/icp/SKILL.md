@@ -1,15 +1,13 @@
 ---
 name: icp
 description: >
-  This skill should be used when the user wants to identify their ideal client profile — the
-  type of person, team, or company they serve best and want more of. Use when someone says
-  "I keep taking on projects that drain me," "I want to figure out who I should actually be
-  working with," "help me define my ideal client," "who should I be targeting," "I attract
-  the wrong clients," "how do I find better clients," or when the creative-business-consultant
-  agent routes to ICP discovery. Also triggers on: "ideal client," "target audience,"
-  "client profile," "who I work best with," "dream client," "client fit," "who to target,"
-  "qualifying clients," "red flags in clients," or any request to define, refine, or filter
-  who the user should be working with.
+  Use when the user wants to identify their ideal client profile — who they serve
+  best and want more of, and who to avoid. Use when someone says "I keep taking on
+  projects that drain me," "I attract the wrong clients," "who should I be
+  targeting," "how do I find better clients," or when the
+  creative-business-consultant agent routes to ICP discovery. Also triggers on:
+  "ideal client," "qualifying clients," "red flags in clients," or any request to
+  define, refine, or filter who the user should be working with.
 ---
 
 # Ideal Client Profile
@@ -17,6 +15,8 @@ description: >
 Guide the user through defining who they serve best and want more of — and equally important, who they should stop pursuing. The ICP is a decision filter that gets applied to every opportunity: every inquiry, every proposal, every "hey, can you help with this?" The goal is a profile specific enough that the user can look at a potential client and immediately know "that's my person" or "that's not for me."
 
 This skill builds on everything upstream. Positioning defines how the user talks about themselves; the ICP defines who they're talking *to*. Design-your-life defines how they want to live; the ICP filters for clients who make that life possible.
+
+**Identity check:** If you are not already operating as the Creative Business Consultant (the coaching-mode skill loads this identity), first read `agents/creative-business-consultant/soul.md`, `agents/creative-business-consultant/personality.md`, `agents/creative-business-consultant/abilities.md`, and `agents/shared/agent-protocol.md`. Internalize silently, then continue.
 
 ## Context
 
@@ -166,7 +166,7 @@ Help the user draft 3-5 questions they can ask in a discovery call to quickly de
 - "How do you typically work with external partners?" (working style filter)
 - "What have you tried before?" (sophistication filter)
 
-These feed directly into the document-builder/questionnaire skill later.
+Capture these well — they seed the client intake questionnaire when the planned document-builder skills ship.
 
 ## Producing the Output
 
@@ -197,7 +197,7 @@ Connections to services, voice, and document builder skills. Things like: "Your 
 
 ### Format
 
-Produce the summary as clean, readable text in the conversation. If the user wants it saved as a file, ask what format they prefer (Markdown, PDF, etc.) and save it to their workspace.
+Produce the summary as clean, readable text in the conversation first. When the user is ready, save it to `unknown-creatives-coach-knowledge/ideal-client-profile.md` — ask before saving, and follow the knowledge-folder rules in `agents/shared/agent-protocol.md`. If the user wants an additional copy in another format (Markdown, PDF, etc.), ask what they prefer and save it to their workspace.
 
 ## Coaching Principles for This Skill
 
